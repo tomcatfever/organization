@@ -1,6 +1,6 @@
 #+TITLE: Word Processing Versus Text Editing In 2018
 #+STARTUP: indent 
-#+STARTUP: content
+#+STARTUP: showeverything
 ** Tasks
    :LOGBOOK:
    CLOCK: [2018-05-08 Tue 17:31]--[2018-05-08 Tue 17:46] =>  0:15

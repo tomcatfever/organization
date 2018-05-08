@@ -1,5 +1,6 @@
 #+TITLE: Spacemacs Cheatsheet
-#+STARTUP: indent overview
+#+STARTUP: indent 
+#+STARTUP: overview
 * Dotspacemacs
 Make changes to spacemacs in the dotspacemacs file.  Usually this file is located at ~/.spacemacs.
 
@@ -55,8 +56,13 @@ thusly:
 | ~g h~        | go to help for symbol under point                   |
 
 * Orgmode
+** Commands
+Use ~SPC m~ to see all Org layer major-mode commands.
+
+** External Links
 [[https://orgmode.org/manual/Texinfo-title-and-copyright-page.html][Link to: The Orgmode Manual]]
 [[http://spacemacs.org/layers/+emacs/org/README.html#key-bindings][Link to: Spacemacs Org layer Keybindings]]
-Use ~SPC m~ to see all Org layer major-mode commands
+[[https://orgmode.org/manual/In_002dbuffer-settings.html][Link to: Orgmode Manual In-Buffer Settings]]
+
 * Spell Checking
 https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcheckers/spell-checking
