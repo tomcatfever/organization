@@ -1,6 +1,9 @@
 #+TITLE: Word Processing Versus Text Editing In 2018
+#+STARTUP: indent 
+#+STARTUP: content
 ** Tasks
    :LOGBOOK:
+   CLOCK: [2018-05-08 Tue 17:31]--[2018-05-08 Tue 17:46] =>  0:15
    CLOCK: [2018-05-08 Tue 14:56]--[2018-05-08 Tue 15:53] =>  0:57
    CLOCK: [2018-05-08 Tue 13:46]--[2018-05-08 Tue 14:28] =>  0:42
    :END:
@@ -14,7 +17,7 @@
 
 
 * Word Processing v Text Editing 
-** Fiddling With Text Tools - A Personal Obcession
+** Fiddling With Text Tools - A Personal Obsession
    Writing is the most important use for a computer.  It has transformed a highly specialized set of tasks and skills into a way for anyone to communicate anywhere anytime.
 
    Yet, I have never read a useful article about word procesing.
@@ -25,7 +28,7 @@
 
    Any and all of these require a writing and publishing tool.
 
-   You might have a requirement from a class that requires submitting text in a docx (Microsoft Word) format.  Or you may need to use specific styles in HTML or Markdown to publish on Medium or on a company's blog.
+   You might have a requirement from a class that requires submitting text in a docx (Microsoft Word) format.  Or you may need to use specific styles in HTML or MarkDown to publish on Medium or on a company's blog.
 
    You can use Microsoft Word to write everything.  Then go through the tedious task of transforming the document from several Microsoft Word files into one.
 
@@ -35,16 +38,15 @@
 
    And, trust me.  I have read lots of opinionated pieces about one tool or another.  Finding a writing tool I liked has been a minor obcession of mine.
 
-   Some reccomend Google Docs.  Docs is great, free, and extendable with addones.  However, it is totally cloud based and has all the limited behaviors of a rich text word processor.
+   Some reccomend Google Docs.  Docs is great, free, and extendable with addons.  However, it is totally cloud based and has all the limited behaviors of a rich text word processor.
 
    A pro programming blogger is in love with ViM.  Vi iMproved is available in any terminal.  It is great for quickly editing a plain text  or small script file.
 
-   For a larger project, like writing a book Tim Ferris /loves/ Scrivener.  George RR Martin swares by WordStar on an old DOS machine.  But, I have tutorial about managing large projects using Docs or Word.  And even traditionally programming tools like VS Code or Atom.
+   For a larger project, like writing a book Tim Ferris /loves/ Scrivener.  George RR Martin swears by WordStar on an old DOS machine.  But, I have tutorial about managing large projects using Docs or Word.  And even traditionally programming tools like VS Code or Atom.
 
    Each gives their reasons.
 
    So what to do?
-
 
 ** Some reccomendations
    I have tried everything.  I'm talking about hours of my free time spent looking at **AMAZING NEW TOOLS** and **MASTERING THE CLASSICS** and **HACKING YOUR WORKFLOW**.
@@ -116,3 +118,5 @@
 
    Once you get it working, you will find things like syntax highlighting and text folding very powerful in ANY writing project.
 
+
+#  LocalWords:  recommendations

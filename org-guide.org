@@ -1,5 +1,6 @@
 #+TITLE: Spacemacs Cheatsheet
-* dotspacemacs
+#+STARTUP: indent overview
+* Dotspacemacs
 Make changes to spacemacs in the dotspacemacs file.  Usually this file is located at ~/.spacemacs.
 
 | Keybinding  | Result                           |
@@ -8,7 +9,7 @@ Make changes to spacemacs in the dotspacemacs file.  Usually this file is locate
 | ~SPC f e R~ | Apply changes without restarting |
 
 * Spacemacs Documentation
-[[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org][Link to: Spacemacs Documentation on GitHub]]
+ [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org][Link to: Spacemacs Documentation on GitHub]]
 
 * Getting Help
 ** Describe functions 
@@ -27,6 +28,8 @@ thusly:
 | ~SPC h d K~ | describe a keymap                                         |
 | ~SPC h d l~ | copy last pressed keys that you can paste in gitter chat  |
 | ~SPC h d m~ | describe current modes                                    |
+
+#  LocalWords:  Dotspacemacs
 | ~SPC h d p~ | describe a package (Emacs built-in function)              |
 | ~SPC h d P~ | describe a package (Spacemacs layer information)          |
 | ~SPC h d s~ | copy system information that you can paste in gitter chat |
@@ -52,6 +55,8 @@ thusly:
 | ~g h~        | go to help for symbol under point                   |
 
 * Orgmode
-  [[https://orgmode.org/manual/Texinfo-title-and-copyright-page.html][Link to: The Orgmode Manual]]
-  [[http://spacemacs.org/layers/+emacs/org/README.html#key-bindings][Link to: Spacemacs Org layer Keybindings]]
-  Use ~SPC m~ to see all Org layer major-mode commands
+[[https://orgmode.org/manual/Texinfo-title-and-copyright-page.html][Link to: The Orgmode Manual]]
+[[http://spacemacs.org/layers/+emacs/org/README.html#key-bindings][Link to: Spacemacs Org layer Keybindings]]
+Use ~SPC m~ to see all Org layer major-mode commands
+* Spell Checking
+https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcheckers/spell-checking
