@@ -1,4 +1,11 @@
-#+TITLE: Spacemacs Cheatsheets
+#+TITLE: Spacemacs Cheatsheet
+* dotspacemacs
+Make changes to spacemacs in the dotspacemacs file.  Usually this file is located at ~/.spacemacs.
+
+| Keybinding  | Result                           |
+|-------------+----------------------------------|
+| ~SPC f e d~ | Open dotfile                     |
+| ~SPC f e R~ | Apply changes without restarting |
 
 * Spacemacs Documentation
 [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org][Link to: Spacemacs Documentation on GitHub]]

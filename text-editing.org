@@ -1,117 +1,118 @@
 #+TITLE: Word Processing Versus Text Editing In 2018
+** Tasks
+   :LOGBOOK:
+   CLOCK: [2018-05-08 Tue 14:56]--[2018-05-08 Tue 15:53] =>  0:57
+   CLOCK: [2018-05-08 Tue 13:46]--[2018-05-08 Tue 14:28] =>  0:42
+   :END:
+*** DONE Outline
+*** DONE Draft
+*** TODO Proof Read  
+*** TODO Record video
+*** TODO Add Images
+*** TODO Brainstorm 30 more titles
+*** TODO Publish
 
-*** DONE Prepare Draft
-*** TODO Proof Read [in progress <2018-05-07 Mon>] 
-*** TODO Add Images [not started]
-*** TODO Brainstorm 30 more titles [not started]
-*** TODO Publish [not started]
 
 * Word Processing v Text Editing 
+** Fiddling With Text Tools - A Personal Obcession
+   Writing is the most important use for a computer.  It has transformed a highly specialized set of tasks and skills into a way for anyone to communicate anywhere anytime.
 
-** Everything they didn't teach about writing in school
+   Yet, I have never read a useful article about word procesing.
 
-   This is an examination of writing tools rather than a discussion the kinds of writing commonly used or career oriented writing tactics.
+   This seems odd to because we all spend a huge amount of time writing and editing.
 
-   What is the point of that?
+   Maybe, it is for a class.  Or a club event.  Perhaps, a small project. Or an ambitious one.
 
-   I have found the tools I choose define the problems I face and how I think about solving them.  Perhaps more than the skills I have or the specific challenges I attempt.
+   Any and all of these require a writing and publishing tool.
 
-   And make no mistake writing and editing are central challenges to the human experience.  Everyone everyone needs the written word. Students, teachers, professionals, small business owners, managers, organizations, teams, parents, friends...  
+   You might have a requirement from a class that requires submitting text in a docx (Microsoft Word) format.  Or you may need to use specific styles in HTML or Markdown to publish on Medium or on a company's blog.
 
-   Humans use words to communicate.  Those words often need writing down.  
+   You can use Microsoft Word to write everything.  Then go through the tedious task of transforming the document from several Microsoft Word files into one.
 
-   Before computers the chore of writing, editing, and sharing words was so labor intensive and difficult it is beyond today's imagination. 
+   In fact, that is most likely what you do.  Most likely, you have Word for OSX or Windows.
 
-** Working Like Win 1995 
+   But, word processing tools like MS Word are extremely limited in their usefulness and extendability.
 
-   Software tools like Microsoft Word or Google Docs made it much easier for than using modal editors.  Editors made it much easier than the analog typewriter.  The typewriter, a pen and paper. 
+   And, trust me.  I have read lots of opinionated pieces about one tool or another.  Finding a writing tool I liked has been a minor obcession of mine.
 
-   But, it doesn't matter what lifestyle post you've read about hipster typesetting.
+   Some reccomend Google Docs.  Docs is great, free, and extendable with addones.  However, it is totally cloud based and has all the limited behaviors of a rich text word processor.
 
-   If you have used a mechanical typewriter, you know fiddling with a word processor is **WAY** better than the alternative.
+   A pro programming blogger is in love with ViM.  Vi iMproved is available in any terminal.  It is great for quickly editing a plain text  or small script file.
 
-   The mechanical typewriter alternative is includes keeping track of all your margins and line spacing as you type.
+   For a larger project, like writing a book Tim Ferris /loves/ Scrivener.  George RR Martin swares by WordStar on an old DOS machine.  But, I have tutorial about managing large projects using Docs or Word.  And even traditionally programming tools like VS Code or Atom.
 
-   Plus, issues like key jams and ribbon replacements made touch typing a professional field.  If you think printer jams and ink carterage replacements are difficult, imagine having unjam the hammers on a piano whenever you hit the wrong combination of notes.  Or having to replace a ribbon *that was dipped in ink*.
+   Each gives their reasons.
 
-   Professional secretaries often typed 100+ words per minute *because they had to*.  Why?  A single change might require retyping *the entire page*.
+   So what to do?
 
-   Messy.  That is reality of yesterday.
-
-   On the other hand, word processessors such as Microsoft Word, Apple Pages, LibreOffice, and Google Docs are amazing for a narrow set of uses.
-
-   Need to typing up a 5 paragraph essay?  Even a 5 to 10 page document, you ask?  A standard interoffice communications, proposals, or legal paperwork, by chance?
-
-   Word processessors are designed for this.
-
-   But, have ever had to type a 30+ page paper? Or needed to insert charts?  Or had to use special symbols like legal trademarks or mathmatics notation?
-
-   Rich text formatting editors like MS Word fall short very quickly as those pages and special needs come up.
-
-   One solution files and using extensions or special inserts. But, that falls short quickly when you need to compile documents into a final result.
-
-   Those approaches are not great if you are writing a book, a long form article, academic journal, or legal brief.
-
-   And if you are writing for the web?
-
-   Forget it, the web is not Rich Text compatible.
-
-** Writing Confessions From 2008
-
-   Are you wealthy enough to write a blog post on a legal pad and have it developed by your staff programmer?
-
-   Ever painstakingly format a handout only to find that it looks like garbage in the exported HTML or PDF?
-
-   If you are considering a journalism, copyediting, book writing, or blogging project... Word processing won't cut it.
-
-   Clearly there is a missing tool.
-
-   Enter text editors, omni editors, and integrated development environments. /Stage Left/
-
-   Windows has Notepad.  Mac has TextEdit.  Everything else has Vi.
-
-   Never heard of Vi?  Prepare your body for the rabbit hole.
-
-   Notepad and TextEdit are plain text editors which support a graphical user interface.  Both respond to commands from the keyboard and a mouse.
-
-   Vi and Vi iMporved (ViM) are shell or terminal based text editors.  These only work in your computer's command line.  And only support commands from the keyboard.
-
-   Any and all of these are great for quickly editing some file.  Not immediately useful for larger, more complex project.
-
-   And while ViM is very customizable, it has an extremely difficult learning curve.
-
-   Enter integrated development environments and extendable text editors. 
-
-   These include proprietary / freemium ones like Eclipse, Visual Studio, and Sublime Text.  And open source ones like Atom, VS Code, and the venerable GNU Emacs.  Finally, are also advanced tools like OmniWriter and Scrivener which use their own specialized approach.
-
-   Any of will solve all your tactical problems related to writing stuff.  It will cost you a steep learning curve.
-
-   But, the reward is an ability to publish and share your thoughts with a wider audience.
-
-   So how do you choose?
 
 ** Some reccomendations
-
    I have tried everything.  I'm talking about hours of my free time spent looking at **AMAZING NEW TOOLS** and **MASTERING THE CLASSICS** and **HACKING YOUR WORKFLOW**.
 
-   I have beta access to **HOT NEW PRODUCT**.  And I have **CUSTOMIZED A VIMRC**.
+   I have beta access to **HOT NEW PRODUCT** (Coda.io for Google Docs).  And I have **CUSTOMIZED A VIMRC** (which I deleted).
 
-   While I don't know a perfect solution, I can make some reccomendations based on 20+ years of mistakes.
-
-*** Best for small projects
+   I still don't know a perfect solution  But, I can make some reccomendations based.
+   
+*** Best for small writing projects and collaboration
     *Google Docs + Addons*
-    Pros Freemium, Extendable, Unlimited cloud storage in Docs Format, Easy to share and publish
-    Cons Limited features, Difficult to find/read documentation due to many past releases
+    Pros: Free, Extendable, Easy to share in many formats 
+    Cons: Strange formatting rules, Difficult to edit plain text
+    
+*** Best for advanced needs
+    *Emacs*
+    Pros: Does everything, Large community, Orgmode
+    Cons: Hard to get started (have to read the instructions)
 
-*** Best option for a novice 
-    *VS Code + Extensions*
-    Pros Free, Supports markup, Easy to add features, Easy to find/read documentation
-    Cons Extensions cause lag, Higher learning curve than word processors
+** Getting Started With Spacemacs
+    You may be thinking... GNU Emacs?  Isn't that for math students and really pretentious programmers?
 
-*** Best poweruser option
-    *Spacemacs + Orgmode*
-    Pros Too numerous to mention
-    Cons Hard to get started (more of a fun challenge IMHO)
+    Yes.
 
+    But, it will change the way you write by giving you all the features.
 
+    I've been programming as a hobby for 5 years.  I used ViM and the ViM extension for VS Code since the beginning of 2018.
+
+    Not taking your hand off of the keyboard to navigate around a text is amazing.
+
+    It won't make you a better programmer or writer.
+
+    It will make it much easier to write in programming languages like JavasScript, Java, and Go where code blocks are enclosed in {{ mustashe brackets }}.
+
+    To get started with Emacs, try Spacemacs.  It is a curated editon that emulates ViM.
+
+    First go to your computer's home directory and backup your .emacs.d/ folder if you have one.
+
+    Then remove it and enter.
+
+    ~git clone https://github.com/syl20bnr/spacemacs.git .emacs.d/~
+
+    Then go to your desktop and make a new file called ~test.org~.
+
+    Double click on that file.  It will launch an Emacs shell.
+
+    Now hit
+
+   ~SPC f e d~ 
+
+   This will open the dot file.
+
+   Now, click on the line ~; org~.  Put the cursor over the semicolon and hit the ~x~ key on you keyboard and hit escape.  Then key in ~:w~.
+
+   Reload the browser by keying in 
+
+   ~SPC f e R~
+
+   Finally, hit the escape key to enter normal mode (the small tab on the left should now be orange) and key in ~:q~
+
+   You should return to the file you had open and the small orange box should now read OrgMode.
+
+   Congradulations.  You now have SpaceMacs.
+   
+   The best way to learn more is to go to [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org][Spacemacs GitHub Documentation]].  Then add ~#getting-help~ to the end of the URL.
+
+   Try navigating around the help file.
+
+   It will ask you to do the EvilTutor (basically the ViM tutorial).  I suggest you do that if you don't have experience with ViM.
+
+   Once you get it working, you will find things like syntax highlighting and text folding very powerful in ANY writing project.
 
