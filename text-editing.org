@@ -66,7 +66,7 @@
     Cons: Hard to get started (have to read the instructions)
 
 ** Getting Started With Spacemacs
-    You may be thinking... GNU Emacs?  Isn't that for math students and really pretentious programmers?
+    You may be thinking... GNU Emacs?  Isn't that for math students and us programmers?
 
     Yes.
 
