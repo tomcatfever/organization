@@ -1,0 +1,35 @@
+#Set profile variable
+export PS1='\\$ '
+
+#VScodeAdded to command line
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/tomcatfever/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/tomcatfever/google-cloud-sdk/completion.bash.inc'
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Enable yarn - update if version changes
+export PATH="$PATH:/opt/yarn-1.3.2/bin"
+
+# Moving around folders Aliases
+alias .='open .'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias home='cd ~/'
+alias docs='open ~/Documents && cd ~/Documents'
+alias desktop='open ~/Desktop && cd ~/Desktop'
+alias downloads='open ~/Downloads && cd ~/Downloads'
+alias projects='open ~/Projects && cd ~/Projects'
+alias trash='open ~/.Trash && cd ~/.Trash'
+alias applications='open Applications && cd ~/../../Applications'
+
+# Open a video with vlc
+alias vlc='open -a vlc'
