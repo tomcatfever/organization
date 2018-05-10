@@ -1,21 +1,21 @@
 #+TITLE: Google Drive Guide
 #+STARTUP: indent
 #+STARTUP: content
-* LOG
+* TASK LOG
   :LOGBOOK:
-  CLOCK: [2018-05-10 Thu 14:10]
+  CLOCK: [2018-05-10 Thu 17:09]--[2018-05-10 Thu 17:43] =>  0:34
+  CLOCK: [2018-05-10 Thu 16:47]--[2018-05-10 Thu 17:07] =>  0:20
   CLOCK: [2018-05-10 Thu 13:17]--[2018-05-10 Thu 13:48] =>  0:31
   CLOCK: [2018-05-10 Thu 11:25]--[2018-05-10 Thu 11:31] =>  0:06
   CLOCK: [2018-05-10 Thu 10:51]--[2018-05-10 Thu 11:23] =>  0:32
   :END:
+  
 ** DONE Define specific goal
 ** DONE Outline
-** DONE Draft
-** TODO Proof read
-** TODO Get images
+** TODO Draft                                                  :In:Progress:
+** TODO Resolve comments
 ** TODO Add sections to goal summary
-** TODO Convert into a presentation
-
+** TODO Convert into a presentation                    
 * Learning Goal 
 This will teach  and the basics of Google Drive's file management.
 
@@ -29,8 +29,8 @@ The basics are swinging a bat at a ball.
 The fundamentals are the
 + Stance
 + Hip engagement
-+ Coodination and
-+ Practice
++ Coordination and
++ Timing
 needed to hit a ball really far.
 
 If you 'learn the basics' of Google Drive as
@@ -38,34 +38,49 @@ If you 'learn the basics' of Google Drive as
 + Ledger based accounting
 + Making slides
 you won't understand the fundamentals.
+# Add image of owl here
 
-And you will not use the tool properly.
+In summary:
 
+The *basics* are what you need to know to start doing a given task.
+
+The *fundamentals* are all the things you /practice/.
 * History Lesson: How To View Files Like Dr DOS
 Before we talk about a cloud based file management tool like Google Drive, you need to understand how computers manage files.
 
-One of the first commercially successful operating systems was DOS (the Disk Operating System).
+To uncover this, let's talk about one of the first commercially successful operating systems was DOS (the Disk Operating System).
 
-/Fun Fact: George RR Martin wrote Game Of Thrones using WordStar (a Word predecessor) on an Dr DOS terminal./
+When you think of DOS you think of a terminal buffer (window) like this:
 
-Think about a library.  There are books.  The books are on shelves.  The shelves have numbers.
+# Find an image of G RR M writing on a DOS prompt
+/Fun Fact: George RR Martin wrote Game Of Thrones using WordStar (a Word predecessor) on an DOS terminal./
+
+To understand how files are navigated visualize a library.
+
+There are books.  The books are on shelves.  The shelves have numbers.
 
 You can move from floor to floor.  You can move from shelf to shelf.
 
-That is how computers work.
+That is how a terminal buffer moves around files.
 
 If you open up a terminal and type into the buffer ~ls -a~ it will output a list of all the folder contents.
 
-**** TODO insert an image of a ~.~ and ~..~
+# Insert an image of a ~.~ and ~..~
 
 * Google Drive
-Cloud based file management tool.  It contains all the files from an Google Cloud connect app.
+** Wat?
+Cloud based file management tool.
+# image describing what the cloud is.
+Drive contains all the files from an Google Drive connect app.
 
-Google Cloud has 5 basic apps: Docs, Sheets, Presentations, Draw, Scripts.  Others from include Photos, Youtube, Google Analytics.
+Google Cloud has 5 basic apps: Docs, Sheets, Presentations, Draw, Scripts.
+
+Others from include Google Photos, Youtube, Google Analytics, and Google Adwords.
 
 Drive also contains 3rd party apps like ShiftEdit, AirTable and Coda.io.
-** URL Structure
-**** TODO look at drive description and URL for a file and a document.
+*** URL Structure
+# Look at drive description and URL for a file and a document.
+
 ** Getting Help In Drive
 Too many 'this is what you need to know talks' skip the practice of *Introducing The Docs* and that limits the usefulness of any /'introductory'/ presentation.
 As I walk you through this I am always going to start with where to get help, the help keyboard commands, and navigating the help documents.
