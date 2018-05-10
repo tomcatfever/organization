@@ -14,17 +14,17 @@ Make changes to spacemacs in the dotspacemacs file.  Usually this file is locate
 ** Installed Layers
 Layers are extensions. 
 - [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/javascript][javascript]] 
-- [[][csv]]
-- [[][helm]]
-- [auto-completion]
-- [better-defaults]
-- [emacs-lisp]
-- [git]
-- [markdown]
-- [osx]
-- [org]
-- [spell-checking]
-- [syntax-checking]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/csv][csv]]
+- [[http://develop.spacemacs.org/layers/+completion/helm/README.html][helm]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcompletion/auto-completion][auto-completion]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bemacs/better-defaults][better-defaults]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/emacs-lisp][emacs-lisp]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bsource-control/git][git]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/markdown][markdown]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bos/osx][osx]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bemacs/org][org]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcheckers/spell-checking][spell-checking]]
+- [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcheckers/syntax-checking[syntax-checking]]
 * [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org][Spacemacs Documentation on GitHub]]
 ** Getting Help
 *** Describe functions 
