@@ -1,8 +1,12 @@
 #+TITLE: Tom's Spacemacs Guide
 #+STARTUP: indent 
 #+STARTUP: overview
-* Purpose
-* Sections
+* Why?
+Spacemacs - Ergonomics, Mnemonics and Consistency.
+Emacs is hard. Vim is hard. Spacemacs is hard.
+Mnemonics isn't enough.
+
+Notes are useful.  Maybe these will help someone else?
 * [[~/.spacemacs][Dotspacemacs]]
 Make changes to spacemacs in the dotspacemacs file.  Usually this file is located at ~/.spacemacs.
 :important-keybindings:
