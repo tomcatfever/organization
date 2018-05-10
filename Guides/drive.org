@@ -1,0 +1,87 @@
+#+TITLE: Google Drive Guide
+#+STARTUP: indent
+#+STARTUP: content
+* LOG
+  :LOGBOOK:
+  CLOCK: [2018-05-10 Thu 14:10]
+  CLOCK: [2018-05-10 Thu 13:17]--[2018-05-10 Thu 13:48] =>  0:31
+  CLOCK: [2018-05-10 Thu 11:25]--[2018-05-10 Thu 11:31] =>  0:06
+  CLOCK: [2018-05-10 Thu 10:51]--[2018-05-10 Thu 11:23] =>  0:32
+  :END:
+** DONE Define specific goal
+** DONE Outline
+** DONE Draft
+** TODO Proof read
+** TODO Get images
+** TODO Add sections to goal summary
+** TODO Convert into a presentation
+
+* Learning Goal 
+This will teach  and the basics of Google Drive's file management.
+
+Concepts covered will include the:
++ Difference bewteen the basics and the fundamentals
++ Fundamentals of navigating a computer's file system
+
+* Basics vs Fundamentals: Defining The Terms
+The basics are swinging a bat at a ball.
+
+The fundamentals are the
++ Stance
++ Hip engagement
++ Coodination and
++ Practice
+needed to hit a ball really far.
+
+If you 'learn the basics' of Google Drive as
++ Word processing
++ Ledger based accounting
++ Making slides
+you won't understand the fundamentals.
+
+And you will not use the tool properly.
+
+* History Lesson: How To View Files Like Dr DOS
+Before we talk about a cloud based file management tool like Google Drive, you need to understand how computers manage files.
+
+One of the first commercially successful operating systems was DOS (the Disk Operating System).
+
+/Fun Fact: George RR Martin wrote Game Of Thrones using WordStar (a Word predecessor) on an Dr DOS terminal./
+
+Think about a library.  There are books.  The books are on shelves.  The shelves have numbers.
+
+You can move from floor to floor.  You can move from shelf to shelf.
+
+That is how computers work.
+
+If you open up a terminal and type into the buffer ~ls -a~ it will output a list of all the folder contents.
+
+**** TODO insert an image of a ~.~ and ~..~
+
+* Google Drive
+Cloud based file management tool.  It contains all the files from an Google Cloud connect app.
+
+Google Cloud has 5 basic apps: Docs, Sheets, Presentations, Draw, Scripts.  Others from include Photos, Youtube, Google Analytics.
+
+Drive also contains 3rd party apps like ShiftEdit, AirTable and Coda.io.
+** URL Structure
+**** TODO look at drive description and URL for a file and a document.
+** Getting Help In Drive
+Too many 'this is what you need to know talks' skip the practice of *Introducing The Docs* and that limits the usefulness of any /'introductory'/ presentation.
+As I walk you through this I am always going to start with where to get help, the help keyboard commands, and navigating the help documents.
+
+It may seem boring.  But, Drive is over a decade old and has undergone *MANY* revisions.  Finding help the right way is critical to using this powerful tool.
+
++ URL for drive
++ Google Developers url
++ Keyboard commands for shortcuts and help
+
+** Drive Apps
+*** Docs
+*** Sheets
+*** Presentations
+*** Draw
+*** Scripts
+*** Add-ons & Add-on market
+** 3rd Party Apps
+

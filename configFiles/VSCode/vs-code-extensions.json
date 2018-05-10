@@ -1,0 +1,29 @@
+{
+    "url": "https://code.visualstudio.com/docs/editor/extension-gallery",
+    "extensions": [
+        "CoenraadS.bracket-pair-colorizer",
+        "christian-kohler.path-intellisense",
+        "cssho.vscode-svgviewer",
+        "dzannotti.vscode-babel-coloring",
+        "eamodio.gitlens",
+        "fallenwood.vimL",
+        "kisstkondoros.vscode-gutter-preview",
+        "mechatroner.rainbow-csv",
+        "ms-python.python",
+        "ms-vscode.wordcount",
+        "msjsdiag.debugger-for-chrome",
+        "robertohuertasm.vscode-icons",
+        "thracian.theme-badwolf-paradox",
+        "tomoki1207.pdf",
+        "vscodevim.vim",
+        "vsmobile.vscode-react-native",
+        "wesbos.theme-cobalt2",
+        "wmaurer.change-cas"
+    ],
+    "cli-extensions": [
+        "code --list-extensions",
+        "code --install-extension {extension id}",
+        "code --uninstall-extension {extension id}",
+        "code --disable-extensions"
+    ]
+}
