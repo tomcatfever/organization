@@ -3,6 +3,7 @@
 #+STARTUP: content
 * TASK LOG
   :LOGBOOK:
+  CLOCK: [2018-05-10 Thu 18:21]--[2018-05-10 Thu 18:28] =>  0:07
   CLOCK: [2018-05-10 Thu 17:09]--[2018-05-10 Thu 17:43] =>  0:34
   CLOCK: [2018-05-10 Thu 16:47]--[2018-05-10 Thu 17:07] =>  0:20
   CLOCK: [2018-05-10 Thu 13:17]--[2018-05-10 Thu 13:48] =>  0:31
@@ -12,7 +13,7 @@
   
 ** DONE Define specific goal
 ** DONE Outline
-** TODO Draft                                                  :In:Progress:
+** TODO Write Draft                                            :In:Progress:
 ** TODO Resolve comments
 ** TODO Add sections to goal summary
 ** TODO Convert into a presentation                    
@@ -38,15 +39,16 @@ If you 'learn the basics' of Google Drive as
 + Ledger based accounting
 + Making slides
 you won't understand the fundamentals.
+
 # Add image of owl here
 
 In summary:
 
-The *basics* are what you need to know to start doing a given task.
+The *basics* are what you need to know to /start/ doing a given task.
 
 The *fundamentals* are all the things you /practice/.
 * History Lesson: How To View Files Like Dr DOS
-Before we talk about a cloud based file management tool like Google Drive, you need to understand how computers manage files.
+Before discussing a cloud based file management tool like Google Drive, you need to understand how computers manage files.
 
 To uncover this, let's talk about one of the first commercially successful operating systems was DOS (the Disk Operating System).
 
@@ -55,17 +57,15 @@ When you think of DOS you think of a terminal buffer (window) like this:
 # Find an image of G RR M writing on a DOS prompt
 /Fun Fact: George RR Martin wrote Game Of Thrones using WordStar (a Word predecessor) on an DOS terminal./
 
-To understand how files are navigated visualize a library.
+Navigation in DOS was like walking through a library.
 
-There are books.  The books are on shelves.  The shelves have numbers.
+There are books (files).  The books are on shelves (in folders).  The shelves have numbers (names).
 
-You can move from floor to floor.  You can move from shelf to shelf.
+You can move from floor to floor (~.~ and ~..~).  You can move from shelf to shelf (~cd to/some/path~).
 
 That is how a terminal buffer moves around files.
 
-If you open up a terminal and type into the buffer ~ls -a~ it will output a list of all the folder contents.
-
-# Insert an image of a ~.~ and ~..~
+# Record a video of navigating files
 
 * Google Drive
 ** Wat?
