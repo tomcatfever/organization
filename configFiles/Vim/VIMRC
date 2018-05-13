@@ -1,39 +1,7 @@
 " Customizing VIM -- Tom Adams
-"
-" ADDING - VUNDLE TO VIM
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" SET THE RUNTIME PATH TO INCLUDE VUNDLE AND INITIALIZE
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"
-" ALTERNATIVELY, PASS A PATH WHERE VUNDLE SHOULD INSTALL PLUGINS
-"CALL VUNDLE#BEGIN('~/SOME/PATH/HERE')
-"
-" LET VUNDLE MANAGE VUNDLE, REQUIRED
-Plugin 'VundleVim/Vundle.vim'
-"
-" ADD PLUGINS BELOW THIS LINE
-
-" NOTE! PLUGINS MUST BE ADDED BEFORE THE FOLLOWING LINE
-call vundle#end()            " required
-filetype plugin indent on    " required
-" TO IGNORE PLUGIN INDENT CHANGES, INSTEAD USE:
-" `filetype plugin on`
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " SETTING COLORS
 syntax enable       " enable syntax processing
-colorscheme badwolf
 set termguicolors
 " END SETTING COLORS 
 
