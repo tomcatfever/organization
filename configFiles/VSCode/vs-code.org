@@ -1,6 +1,6 @@
 #+Title: VS Code Configuration
 #+Startup: indent
-#+Startup: content
+#+Startup: contendt
 * [[https://code.visualstudio.com/docs/editor/extension-gallery][VS Code Extensions]] 
 ** CLI Commands
 "code --list-extensions",
