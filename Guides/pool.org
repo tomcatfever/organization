@@ -1,5 +1,5 @@
 #+TITLE: Robin's Outdoor Pool
-#+STARTUP: content
+#+STARTUP: showall
 #+STARTUP: indent
 * Opening The Pool 
 1. White ridged hose attach to heater out
