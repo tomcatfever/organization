@@ -5,84 +5,120 @@
 #+STARTUP: indent 
 * Advanced Node Course Summary
 :LOGBOOK:
+CLOCK: [2018-05-17 Thu 08:57]--[2018-05-17 Thu 09:22] =>  0:25
 CLOCK: [2018-05-16 Wed 18:10]--[2018-05-16 Wed 18:36] =>  0:26
 CLOCK: [2018-05-16 Wed 15:55]--[2018-05-16 Wed 16:20] =>  0:25
 CLOCK: [2018-05-16 Wed 14:20]--[2018-05-16 Wed 14:45] =>  0:25
 CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 :END:
-*** TODO The Internals of Node 
+*** TODO Part One: The Internals of Node 
    - 20 Lectures 
    - 01:48:31 time
-*** TODO Enhancing Node Performance 
+*** TODO Part Two: Enhancing Node Performance 
    - 14 Lectures 
    - 01:23:59 time
-*** TODO Project Setup 
+*** TODO Part Three: Project Setup 
    - 5 Lectures 
    - 00:24:45 time
-*** TODO Data Caching with Redis 
+*** TODO Part Four: Data Caching with Redis 
    - 28 Lectures
    - 02:50:24 time
-*** TODO Automated Headless Browser Testing 
+*** TODO Part Five: Automated Headless Browser Testing 
    - 53 Lectures 
    - 05:54:12 time
-*** TODO Wiring Up Continuous Integration 
+*** TODO Part Six: Wiring Up Continuous Integration 
    - 15 Lectures 
    - 01:19:36 time
-*** TODO Scalable Image/File Upload 
+*** TODO Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
-*** TODO Wrapping Up Tasks
+*** TODO Wrapping Up
 **** TODO Format Images
-**** TODO Write up course as blog post
+**** TODO Write up description of course as blog post
+
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
 #+CAPTION: This is an image of the basic part of node, lecture 9636084
 [[./img/node-parts-simple.png]]
+
 - V8 Engine allows us to execute JS code outside of the browser.
-- Libuv is a C++ project that give access to the file system, networking, and some parts of concurrency.
-- NodeJS provides a javascript interface and API that allows us to use V8 and libuv.
+- Libuv is a C++ project that give access to the file system, networking,
+  and some parts of concurrency.
+- NodeJS provides a javascript interface and API that allows us to use V8 
+  and libuv.
+
 #+CAPTION: Introduces http fs crypto and path, lecture 9636088
 [[./img/node-parts-simple-2.png]]
+
 #+CAPTION: The process.binding() function connects a node function to V8 engine
 [[./img/node-process.binding.png]]
-- all the javascript code is in the lib directory on node's github page
-- the c++ code is in the src directory
-- Once again,
+
+- All the javascript code is in the lib directory on node's github page.
+- The c++ code is in the src directory.
+
+- Once again, in NodeJS:
   - V8 is used to interpret and execute Javascript code, while
   - libuv is used for accessing the filesystem and some aspects of concurrency.
+
 ** Event Loop And Threads
 *** Threads
+
 #+CAPTION: This shows the OSX activity monitor.
 [[./img/activity-monitor-threads.png]]
+
 #+CAPTION: Scheduling is how a computer decides which thread to process.
 [[./img/thread-scheduling.png]]
+
 #+CAPTION: To process more thread, engineers can schedule using more CPU cores, aka multi-threading or hyper-threading.
 [[./img/thread-cpu-core.png]]
+
 *** Event Loop
+
 #+CAPTION: This visualizes how the 'event loop' handles threading in a NodeJS program.
 [[./img/node-thread-loop.png]]
-- Understanding the event loop will enables you to understand performance issues in NodeJS.
-- The event loop is difficult to understand.
-#+NAME: Psudo-code example of event loop
-#+BEGIN_SRC js
-// node myFile JS
 
+- Key Takeaways:
+  - Understanding the event loop will enables you to understand performance
+  issues in NodeJS.
+  - The event loop is difficult to understand.
+
+#+NAME: Psudo-code example of Event Loop
+#+BEGIN_SRC js
+// Node myFile JS
+// These arrays simulate book-keeping operations.
 const pendingTimers = [];
 const pendingOSTasks = [];
 const pendingOperations = [];
 
+// New timers, tasks, operaitons are recorded from myFile running
 myFile.runContents();
 
-// Helper function - While loop continues for another tick
+// Helper function - While loop continues for another tick.
+// This describes the three pending checks NodeJS makes. 
 function shouldContinue() {
   // Check One: Any pending setTimeout, setInterval, or setImmediate?
   // Check Two: Any pending OS tasks? (Like a server listening on a port)
   // Check Three: Any pending long running operations? (Like fs module) 
+  return pendingTimers.length || pendingOSTasks.length || pendingOperations.length
 }
 
-// entire body executes in one 'tick'
-while(shouldContinue()) {
+// Remember while loops continue while(bool=true). In this example,
+// the entire body executes in one 'tick' (is one iteration of Event Loop).
 
+while(shouldContinue()) {
+ // 1) Node looks at pendingTimers and sees if any functions are ready to be called.
+ //    This involves the built in NodeJS functions setTimeout, setInterval.
+
+ // 2) Node looks at pendingOSTasks and pendingOperations and calls relevant callbacks
+
+ // 3) Pause execution. Continue when...
+ //    - a new pendingOSTasks is done,
+ //    - a new pendingOperation is done, or
+ //    - a timer is about to complete. 
+
+ // 4) Look at pendingTimers. Call any setImmediate.
+
+ // 5) Handle any 'close' events.
 }
 // exit back to terminal
 #+END_SRC
