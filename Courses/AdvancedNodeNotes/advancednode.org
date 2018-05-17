@@ -1,4 +1,4 @@
-#+TITLE: Stephen Grider Advanced Node Course
+#+TITLE: Stephen Grider Advanced Node Course Notes
 #+AUTHOR: @tomcatfever
 #+CATEGORY: Courses 
 #+STARTUP: content
