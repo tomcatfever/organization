@@ -3,8 +3,7 @@
 #+CATEGORY: Courses 
 #+STARTUP: content
 #+STARTUP: indent 
-#+SEQ_TODO: TODO(t) WAITING(w) SOMEDAY(s) | DONE (d) CANCEL(c)
-#+PRIORITIES: A B C 
+#+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Advanced Node Course Summary
 ** Time
 :LOGBOOK:
@@ -16,10 +15,10 @@ CLOCK: [2018-05-16 Wed 14:20]--[2018-05-16 Wed 14:45] =>  0:25
 CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 :END:
 ** Goals
-*** TODO [#A] Part One: The Internals of Node 
+*** CURRENT Part One: The Internals of Node 
    - 20 Lectures 
    - 01:48:31 time
-*** TODO [#B] Part Two: Enhancing Node Performance 
+*** TODO Part Two: Enhancing Node Performance 
    - 14 Lectures 
    - 01:23:59 time
 *** TODO Part Three: Project Setup 
@@ -37,9 +36,9 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 *** TODO Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
-*** SOMEDAY Wrapping Up
-**** WAITING Format Images
-**** WAITING Write up description of course as blog post
+*** SOMEDAY Write It Up
+**** SOMEDAY Format Images
+**** SOMEDAY Craft into blog post
 
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
@@ -128,10 +127,10 @@ while(shouldContinue()) {
 // exit back to terminal
 #+END_SRC
 *** Event Loop: Single Threaded?
-In general, the NodeJS:
+/In general, the NodeJS:/
 - *Event Loop* => Single Threaded
 
-However, some of NodeJS:
+/However, some of NodeJS:/
 - *Framework/Std Lib => *Not* Single Threaded
 
   [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9636106?start=139][Code example starts at 2:19]]
