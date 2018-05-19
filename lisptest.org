@@ -1,0 +1,4 @@
+* Lisp examples
+
+'(calc-eval "1+1")'
+

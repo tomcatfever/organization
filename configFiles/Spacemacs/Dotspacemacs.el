@@ -84,7 +84,7 @@
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
-   dotspacemacs-active-transparency 70
+   dotspacemacs-active-transparency 85
    dotspacemacs-inactive-transparency 50
    dotspacemacs-show-transient-state-title t
    dotspacemacs-show-transient-state-color-guide t

@@ -3,18 +3,23 @@
 #+CATEGORY: Courses 
 #+STARTUP: content
 #+STARTUP: indent 
+#+SEQ_TODO: TODO(t) WAITING(w) SOMEDAY(s) | DONE (d) CANCEL(c)
+#+PRIORITIES: A B C 
 * Advanced Node Course Summary
+** Time
 :LOGBOOK:
+CLOCK: [2018-05-17 Thu 16:12]--[2018-05-17 Thu 17:13] =>  1:01
 CLOCK: [2018-05-17 Thu 08:57]--[2018-05-17 Thu 09:22] =>  0:25
 CLOCK: [2018-05-16 Wed 18:10]--[2018-05-16 Wed 18:36] =>  0:26
 CLOCK: [2018-05-16 Wed 15:55]--[2018-05-16 Wed 16:20] =>  0:25
 CLOCK: [2018-05-16 Wed 14:20]--[2018-05-16 Wed 14:45] =>  0:25
 CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 :END:
-*** TODO Part One: The Internals of Node 
+** Goals
+*** TODO [#A] Part One: The Internals of Node 
    - 20 Lectures 
    - 01:48:31 time
-*** TODO Part Two: Enhancing Node Performance 
+*** TODO [#B] Part Two: Enhancing Node Performance 
    - 14 Lectures 
    - 01:23:59 time
 *** TODO Part Three: Project Setup 
@@ -32,9 +37,9 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 *** TODO Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
-*** TODO Wrapping Up
-**** TODO Format Images
-**** TODO Write up description of course as blog post
+*** SOMEDAY Wrapping Up
+**** WAITING Format Images
+**** WAITING Write up description of course as blog post
 
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
@@ -61,7 +66,7 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
   - libuv is used for accessing the filesystem and some aspects of concurrency.
 
 ** Event Loop And Threads
-*** Threads
+*** What Are Threads?
 
 #+CAPTION: This shows the OSX activity monitor.
 [[./img/activity-monitor-threads.png]]
@@ -72,7 +77,7 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 #+CAPTION: To process more thread, engineers can schedule using more CPU cores, aka multi-threading or hyper-threading.
 [[./img/thread-cpu-core.png]]
 
-*** Event Loop
+*** Introducing The Event Loop
 
 #+CAPTION: This visualizes how the 'event loop' handles threading in a NodeJS program.
 [[./img/node-thread-loop.png]]
@@ -122,3 +127,13 @@ while(shouldContinue()) {
 }
 // exit back to terminal
 #+END_SRC
+*** Event Loop: Single Threaded?
+In general, the NodeJS:
+- *Event Loop* => Single Threaded
+
+However, some of NodeJS:
+- *Framework/Std Lib => *Not* Single Threaded
+
+  [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9636106?start=139][Code example starts at 2:19]]
+
+Insert Code Example Notes
