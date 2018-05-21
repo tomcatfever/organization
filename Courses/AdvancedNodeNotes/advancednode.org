@@ -14,31 +14,30 @@ CLOCK: [2018-05-16 Wed 15:55]--[2018-05-16 Wed 16:20] =>  0:25
 CLOCK: [2018-05-16 Wed 14:20]--[2018-05-16 Wed 14:45] =>  0:25
 CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 :END:
-** Goals
+** Tasks
 *** CURRENT Part One: The Internals of Node 
-   - 20 Lectures 
-   - 01:48:31 time
-*** TODO Part Two: Enhancing Node Performance 
+**** TODO insert screenshots
+*** Part Two: Enhancing Node Performance 
    - 14 Lectures 
    - 01:23:59 time
-*** TODO Part Three: Project Setup 
+*** Part Three: Project Setup 
    - 5 Lectures 
    - 00:24:45 time
-*** TODO Part Four: Data Caching with Redis 
+*** Part Four: Data Caching with Redis 
    - 28 Lectures
    - 02:50:24 time
-*** TODO Part Five: Automated Headless Browser Testing 
+*** Part Five: Automated Headless Browser Testing 
    - 53 Lectures 
    - 05:54:12 time
-*** TODO Part Six: Wiring Up Continuous Integration 
+*** Part Six: Wiring Up Continuous Integration 
    - 15 Lectures 
    - 01:19:36 time
-*** TODO Part Seven: Scalable Image/File Upload 
+*** Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
 *** SOMEDAY Write It Up
-**** SOMEDAY Format Images
-**** SOMEDAY Craft into blog post
+**** Format Images
+**** Craft into blog post
 
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
@@ -128,11 +127,118 @@ while(shouldContinue()) {
 #+END_SRC
 *** Event Loop: Single Threaded?
 /In general, the NodeJS:/
-- *Event Loop* => Single Threaded
+*Event Loop* => Single Threaded
 
 /However, some of NodeJS:/
-- *Framework/Std Lib => *Not* Single Threaded
+*Framework/Std Lib => *Not* Single Threaded
+**** Thread Pool Code Example
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/?start=963611215][Course Link: Diagram of how node is actually threaded]]
+Brief
+Basically libuv creates a thread pool of calculation intensive methods
+like pbkdf2 which run separately.  NodeJS defaults to 4 threads as shown
+in the diagram. As a result the code example returns this result:
+:threads:
+#+BEGIN_SRC sh
+$ node threads.js
+2: 1047
+1: 1052
+#+END_SRC
+:END:
 
-  [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9636106?start=139][Code example starts at 2:19]]
+Four calls are allocated to each of the default four threads:
 
-Insert Code Example Notes
+:defaultThreads:
+#+BEGIN_SRC sh
+$ node threads.js
+2: 2102
+1: 2108
+3: 2108
+4: 2114
+#+END_SRC
+:END:
+
+Notice that it takes a second longer?  Try with five calls:
+
+:fiveThreads:
+#+BEGIN_SRC sh
+node threads.js
+3: 2115
+4: 2122
+2: 2127
+1: 2140
+5: 3205
+#+END_SRC
+:END:
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/?start=9636118150][Course Link: How node threads use CPU cores]]
+A standard Macbook has two CPU cores.
+
+/insert How node threads use CPU cores screenshot/
+
+The CPU has access to multi-threading.  Therefore, each call is assigned to a
+thread. And then each thread concurrently resolves the calls. Finally the fifth
+call is assigned to a thread and resolved by the CPU.
+
+The ~process.env~ method ~UV_THREADPOOL_SIZE~ controls the NodeJS thread pool.
+
+#+BEGIN_SRC js
+process.env.UV_THREADPOOL_SIZE = 2;
+// ... rest of threads.js example
+#+END_SRC
+
+Result from running threads script with two threads and four calls:
+:twoThreads:
+#+BEGIN_SRC sh
+$ node threads.js
+2: 1069
+1: 1074
+3: 2141
+4: 2153
+5: 3181
+#+END_SRC
+
+:END:
+
+To further test this I tried seeing the result of the following:
+*1st* /Twelve calls with FOUR threads, two cores:/
+:FOUR:
+#+BEGIN_SRC sh
+node threads.js
+1: 2089
+4: 2121
+2: 2141
+3: 2152
+6: 4236
+7: 4242
+9: 4268
+8: 4346
+10: 5810
+11: 5868
+12 5883
+#+END_SRC
+:END:
+
+*2nd* /Twelve calls with SIX threads, two cores:/
+:SIX:
+#+BEGIN_SRC sh
+node threads.js
+3: 3152
+1: 3157
+6: 3164
+2: 3188
+7: 3196
+4: 3209
+9: 6012
+8: 6026
+10: 6030
+11: 6036
+12 6036
+#+END_SRC
+:END:
+
+**** [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646726?start=0][Thread Pool Faq Lesson]] 
+/Insert image: ThreadPool FAQ/
+*** pending os tasks
+
+** Next Lecture
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646728?start=0][Explaining OS Operations]]

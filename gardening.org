@@ -1,0 +1,19 @@
+#+STARTUP: indent
+#+STARTUP: content
+* Gardening
+* Things to know
+** Location
+*** Hardiness zones
+https://en.wikipedia.org/wiki/Hardiness_zone
+http://planthardiness.ars.usda.gov/PHZMWeb/
+https://www.ohio.com/akron/lifestyle/new-plant-hardiness-map-puts-region-in-warmer-zone
+** Plant Information
+*** Plant Type  
+**** Annual/Perennial  
+**** Family
+**** Taxonomies
+*** Growth Requirements
+**** Sunlight 
+**** Water
+**** Soil
+**** Size
