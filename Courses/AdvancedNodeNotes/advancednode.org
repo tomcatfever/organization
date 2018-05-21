@@ -259,22 +259,42 @@ node threads.js
 /Insert image: ThreadPool FAQ/
 *** Pending OS Tasks
 This code benchmarks how the asyncronous library https handles sending a response call to google.com.  Then prints it to the NodeJS REPL.
+
 :HttpsFirstExample:
 #+BEGIN_SRC js
 const https = require('https');
 const start = Date.now();
-https.request('https://www.google.com', res => {
-  res.on('data', () => {});
-  res.on('end', () => {
-    console.log(Date.now() - start);
-  });
-})
-.end();
+
+function doRequest() {
+    https.request('https://www.google.com', res => {
+            res.on('data', () => {});
+            res.on('end', () => {
+                console.log(Date.now() - start);
+            });
+        })
+        .end();
+}
+
+doRequest();
 #+End_SRC
 :END:
 
+This return a response of seconds to the NodeJS console. What is returned when this function is called more than once?
 
+:Call5Times:
+#+BEGIN_SRC sh
+node async.js
+445
+448
+561
+562
+563
+563
+#+END_SRC
+:end:
 
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646730?start=100][Course Link: What happens when running ascync.js example 5x]]
+*Summary*
+NodeJS delegates ascync operations to the OSAscyncHelpers. 
 
 * Upcoming Lecture
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646730?start=0][Libuv OS Delegation]]
