@@ -16,7 +16,15 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 :END:
 ** Tasks
 *** CURRENT Part One: The Internals of Node 
-**** TODO insert screenshots
+**** DONE Configure local project for examples with eslint and babel properly
+CLOSED: [2018-05-21 Mon 12:05]
+**** DONE Connect Visual Studio Code with eslint
+CLOSED: [2018-05-21 Mon 12:07]
+**** DONE Configure Spacemacs React layer
+CLOSED: [2018-05-21 Mon 12:05]
+**** DONE Advance Node Course: Part one screenshots
+CLOSED: [2018-05-21 Mon 12:32]
+**** TODO Insert remaining Part One screenshots
 *** Part Two: Enhancing Node Performance 
    - 14 Lectures 
    - 01:23:59 time
@@ -35,29 +43,37 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 *** Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
+*** Connect Spacemacs flycheck with local eslint directory 
 *** SOMEDAY Write It Up
-**** Format Images
 **** Craft into blog post
 
+**** TODO Resize all images
+**** TODO Outside of course: Set up orgmode calendar
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
-#+CAPTION: This is an image of the basic part of node, lecture 9636084
-[[./img/node-parts-simple.png]]
-
+*First Takeaways*
 - V8 Engine allows us to execute JS code outside of the browser.
 - Libuv is a C++ project that give access to the file system, networking,
   and some parts of concurrency.
 - NodeJS provides a javascript interface and API that allows us to use V8 
   and libuv.
-
-#+CAPTION: Introduces http fs crypto and path, lecture 9636088
-[[./img/node-parts-simple-2.png]]
-
-#+CAPTION: The process.binding() function connects a node function to V8 engine
-[[./img/node-process.binding.png]]
-
 - All the javascript code is in the lib directory on node's github page.
 - The c++ code is in the src directory.
+
+:ImageBasicNodeParts:
+#+CAPTION: This is an image of the basic part of node.
+[[./img/node-parts-simple.png]]
+:END:
+
+:ImageCryptoPath:
+#+CAPTION: Introduces http fs crypto and path, lecture 9636088
+[[./img/node-parts-simple-2.png]]
+:END:
+
+:ImageProcessBinding:
+#+CAPTION: The process.binding() function connects a node function to V8 engine
+[[./img/node-process.binding.png]]
+:END:
 
 - Once again, in NodeJS:
   - V8 is used to interpret and execute Javascript code, while
@@ -65,27 +81,31 @@ CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
 
 ** Event Loop And Threads
 *** What Are Threads?
-
+:ImageOsxActivityMonitor:
 #+CAPTION: This shows the OSX activity monitor.
 [[./img/activity-monitor-threads.png]]
-
+:END:
+:ImageScheduling:
 #+CAPTION: Scheduling is how a computer decides which thread to process.
 [[./img/thread-scheduling.png]]
-
+:END:
+:ImageMultiCoreThreading:
 #+CAPTION: To process more thread, engineers can schedule using more CPU cores, aka multi-threading or hyper-threading.
 [[./img/thread-cpu-core.png]]
-
+:END:
 *** Introducing The Event Loop
-
-#+CAPTION: This visualizes how the 'event loop' handles threading in a NodeJS program.
-[[./img/node-thread-loop.png]]
-
-- Key Takeaways:
-  - Understanding the event loop will enables you to understand performance
-  issues in NodeJS.
+*Next Takeaways*
+  - Understanding the event loop will enables you to understand performance issues in NodeJS.
   - The event loop is difficult to understand.
 
-#+NAME: Psudo-code example of Event Loop
+/The image and pseudo-code examples will illustrate./
+
+:ImageThreadEventLoop:
+#+CAPTION: This visualizes how the 'event loop' handles threading in a NodeJS program.
+[[./img/node-thread-loop.png]]
+:END:
+
+:PseudoCodeExample:
 #+BEGIN_SRC js
 // Node myFile JS
 // These arrays simulate book-keeping operations.
@@ -125,6 +145,8 @@ while(shouldContinue()) {
 }
 // exit back to terminal
 #+END_SRC
+:END:
+
 *** Event Loop: Single Threaded?
 /In general, the NodeJS:/
 *Event Loop* => Single Threaded
@@ -134,9 +156,7 @@ while(shouldContinue()) {
 **** Thread Pool Code Example
 [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/?start=963611215][Course Link: Diagram of how node is actually threaded]]
 Brief
-Basically libuv creates a thread pool of calculation intensive methods
-like pbkdf2 which run separately.  NodeJS defaults to 4 threads as shown
-in the diagram. As a result the code example returns this result:
+Basically libuv creates a thread pool of calculation intensive methods like pbkdf2 which run separately.  NodeJS defaults to 4 threads as shown in the diagram. As a result the code example returns this result:
 :threads:
 #+BEGIN_SRC sh
 $ node threads.js
@@ -175,9 +195,7 @@ A standard Macbook has two CPU cores.
 
 /insert How node threads use CPU cores screenshot/
 
-The CPU has access to multi-threading.  Therefore, each call is assigned to a
-thread. And then each thread concurrently resolves the calls. Finally the fifth
-call is assigned to a thread and resolved by the CPU.
+The CPU has access to multi-threading.  Therefore, each call is assigned to a thread. And then each thread concurrently resolves the calls. Finally the fifth call is assigned to a thread and resolved by the CPU.
 
 The ~process.env~ method ~UV_THREADPOOL_SIZE~ controls the NodeJS thread pool.
 
@@ -200,6 +218,7 @@ $ node threads.js
 :END:
 
 To further test this I tried seeing the result of the following:
+
 *1st* /Twelve calls with FOUR threads, two cores:/
 :FOUR:
 #+BEGIN_SRC sh
@@ -238,7 +257,24 @@ node threads.js
 
 **** [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646726?start=0][Thread Pool Faq Lesson]] 
 /Insert image: ThreadPool FAQ/
-*** pending os tasks
+*** Pending OS Tasks
+This code benchmarks how the asyncronous library https handles sending a response call to google.com.  Then prints it to the NodeJS REPL.
+:HttpsFirstExample:
+#+BEGIN_SRC js
+const https = require('https');
+const start = Date.now();
+https.request('https://www.google.com', res => {
+  res.on('data', () => {});
+  res.on('end', () => {
+    console.log(Date.now() - start);
+  });
+})
+.end();
+#+End_SRC
+:END:
 
-** Next Lecture
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646728?start=0][Explaining OS Operations]]
+
+
+
+* Upcoming Lecture
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646730?start=0][Libuv OS Delegation]]
