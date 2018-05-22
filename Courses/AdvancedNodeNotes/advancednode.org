@@ -298,3 +298,4 @@ node async.js
 NodeJS delegates ascync operations to the OSAscyncHelpers. *Again*, everything happens in the ThreadPool 
 
 * Upcoming Lecture
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646732?start=0][NEXT]]
