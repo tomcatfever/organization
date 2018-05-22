@@ -4,40 +4,41 @@
 #+STARTUP: content
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
-* Advanced Node Course Summary
-** Tasks
-*** DONE Part One: The Internals of Node 
+* Advanced Node Course
+* Tasks
+** DONE Part One: The Internals of Node 
 CLOSED: [2018-05-22 Tue 11:20]
-**** DONE Configure local project for examples with eslint and babel properly
+*** DONE Configure local project for examples with eslint and babel properly
 CLOSED: [2018-05-21 Mon 12:05]
-**** DONE Connect Visual Studio Code with eslint
+*** DONE Connect Visual Studio Code with eslint
 CLOSED: [2018-05-21 Mon 12:07]
-**** DONE Configure Spacemacs React layer
+*** DONE Configure Spacemacs React layer
 CLOSED: [2018-05-21 Mon 12:05]
-**** DONE Advance Node Course: Part one screenshots
+*** DONE Advance Node Course: Part one screenshots
 CLOSED: [2018-05-21 Mon 12:32]
-*** CURRENT Part Two: Enhancing Node Performance 
-*STARTED:* <2018-05-22 Tue 11:22> 
-*** Part Three: Project Setup 
+** CURRENT Part Two: Enhancing Node Performance 
+*** DONE Add to outline and summarize lectures. 
+CLOSED: [2018-05-22 Tue 11:30]
+** Part Three: Project Setup 
    - 5 Lectures 
    - 00:24:45 time
-*** Part Four: Data Caching with Redis 
+** Part Four: Data Caching with Redis 
    - 28 Lectures
    - 02:50:24 time
-*** Part Five: Automated Headless Browser Testing 
+** Part Five: Automated Headless Browser Testing 
    - 53 Lectures 
    - 05:54:12 time
-*** Part Six: Wiring Up Continuous Integration 
+** Part Six: Wiring Up Continuous Integration 
    - 15 Lectures 
    - 01:19:36 time
-*** Part Seven: Scalable Image/File Upload 
+** Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
-*** Connect Spacemacs flycheck with local eslint directory 
-*** TODO Write It Up
-**** TODO Resize and insert screen-shots
-**** TODO Outside of course: Set up orgmode calendar
-**** SOMEDAY Craft into blog post
+** TODO Clean Up
+*** TODO Resize and insert screen-shots
+*** TODO Connect Spacemacs flycheck with local eslint directory 
+*** TODO Outside of course: Set up orgmode calendar
+*** SOMEDAY Craft into blog post
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
 *First Takeaways*
@@ -285,7 +286,7 @@ node async.js
 [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646730?start=100][Course Link: What happens when running ascync.js example 5x]]
 *Summary*
 NodeJS delegates ascync operations to the OSAscyncHelpers. *Again*, everything happens in the ThreadPool 
-*** Async FAQ & Review 
+** Async FAQ & Review 
 
 | Question               | Answer                           |
 |------------------------+----------------------------------|
@@ -301,5 +302,7 @@ NodeJS delegates ascync operations to the OSAscyncHelpers. *Again*, everything h
 :ImageSummaryDiagram:
 /insert screenshot of summary
 :END:
-
+* Part Two: Enhancing Node Performance  
+The agenda talks about performance, children, clustering, and workers. 
 * Upcoming Lecture
+?
