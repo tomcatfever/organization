@@ -5,28 +5,29 @@
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Vue Essentials Course
-** CURRENT Part One: An Introduction to Vue
-A Vue starter project, terminology introduction, Imperative vs Declarative programming, and a Exercise with solutions
+** Sections
+*** CURRENT Part One: An Introduction to Vue
+A Vue starter project, terminology introduction, Imperative vs Declarative programming, and a Exercise with solutions.
 /59 minutes 24 lectures/
-** Part Two: Moving on with Vue CLI
+*** Part Two: Moving on with Vue CLI
 Introduction to Vue CLI
 /30 minutes 8 lectures/
-** Part Three: Writing Effective Vue Apps
+*** Part Three: Writing Effective Vue Apps
 More detailed Vue with a Youtube-like app with a focus on component driven development
 /? minutes 47 lectures/
-** Part Four: Handling State with Vuex
+*** Part Four: Handling State with Vuex
 What is stays in the title plus using semantic ui
 /? minutes 8 lectures/
-** Part Five: Authentication in Vue with OAuth2
+*** Part Five: Authentication in Vue with OAuth2
 Handling authentication states
 /? minutes 17 lectures/
-** Part Six: Navigation with Vue Router
+*** Part Six: Navigation with Vue Router
 Connecting Vue router to the app.
 /? minutes 16 lectures/
-** Part Seven: Design of Vuex Modules
+*** Part Seven: Design of Vuex Modules
 Working with Vue models
 /? minutes 10 lectures/
-** Part Eight: Handling Image Upload
+*** Part Eight: Handling Image Upload
 Image uploading and CSS Grid
 /? minutes 12 lectures/
 ** Things to do
