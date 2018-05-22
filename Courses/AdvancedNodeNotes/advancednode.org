@@ -17,24 +17,31 @@ CLOSED: [2018-05-21 Mon 12:05]
 *** DONE Advance Node Course: Part one screenshots
 CLOSED: [2018-05-21 Mon 12:32]
 ** CURRENT Part Two: Enhancing Node Performance 
+*** Overview
+The agenda talks about performance, children, clustering, and workers.  Will these lectures build on an understanding of the Event Loop and Thread Pool?
 *** DONE Add to outline and summarize lectures. 
 CLOSED: [2018-05-22 Tue 11:30]
 ** Part Three: Project Setup 
-   - 5 Lectures 
-   - 00:24:45 time
+*** Overview 
+Setting up a MongoDB project
 ** Part Four: Data Caching with Redis 
-   - 28 Lectures
-   - 02:50:24 time
+*** Overview
+Continues MongoDB project using Redis, understanding cashes, promises, models
 ** Part Five: Automated Headless Browser Testing 
-   - 53 Lectures 
-   - 05:54:12 time
+*** Overview
+Long section.  Automates project testing with Flow, Jest, Chromium, and Puppeteer.  Covers concepts like DRY testing, the wait keyword, and advanced testing helpers.
 ** Part Six: Wiring Up Continuous Integration 
    - 15 Lectures 
    - 01:19:36 time
+*** Overview 
+The example project introduces continuous integration concepts, YAML files, and Travis.
 ** Part Seven: Scalable Image/File Upload 
    - 30 Lectures 
    - 02:20:33 time
+*** Overview 
+The final section covers image handling, converting large image files for AWS, and wiring up AWS Flow.
 ** TODO Clean Up
+*** TODO Outline all the parts
 *** TODO Resize and insert screen-shots
 *** TODO Connect Spacemacs flycheck with local eslint directory 
 *** TODO Outside of course: Set up orgmode calendar
@@ -299,10 +306,117 @@ NodeJS delegates ascync operations to the OSAscyncHelpers. *Again*, everything h
 | Event Loop?            | 'pendingOSTasks' array.          |
 
 [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646734?start=110][Course Link: A summary diagram]]
+
 :ImageSummaryDiagram:
-/insert screenshot of summary
+/insert screenshot of summary/
+:END:
+** Code Example - Crazy Behavior
+*Interview Question:*
+/What order will the console logs appear from this code example?/
+
+:MultitaskJS:
+#+BEGIN_SRC js
+process.env.UV_THREADPOOL_SIZE = 4;
+
+const https = require('https');
+const crypto = require('crypto');
+const fs = require('fs');
+
+const start = Date.now();
+
+function doHash() {
+  crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+    console.log('Hash:', Date.now() - start);
+  });
+}
+
+function doRequest() {
+  https
+    .request('https://www.google.com', (res) => {
+      res.on('data', () => {});
+      res.on('end', () => {
+        console.log('Request:', Date.now() - start);
+      });
+    })
+    .end();
+}
+
+// Make a request to google.com
+doRequest();
+
+// Get all the contents of multitask.js file
+fs.readFile('multitask.js', 'utf8', () => {
+  console.log('FS:', Date.now() - start);
+});
+
+// Call pbkdf2 Hash eight times
+doHash();
+doHash();
+doHash();
+doHash();
+doHash();
+doHash();
+doHash();
+doHash();
+#+END_SRC
+:END:
+
+I guessed FS would run first. My reasoning is that it is a local OS operation which is resolved before async calls.  And the Hash operation has a 512 millisecond timeout.  Here is the result.
+
+:HashFourTimes:
+#+BEGIN_SRC sh
+node multitask.js
+FS: 30
+Request: 303
+Hash: 2152
+Hash: 2161
+Hash: 2185
+Hash: 2197
+#+END_SRC
+:END:
+
+While, my intuition was correct something interesting happened with eight calls to Hash.
+
+:HashEightTimes:
+#+BEGIN_SRC sh
+node multitask.js
+Request: 339
+Hash: 3237
+Hash: 3252
+Hash: 3289
+FS: 3305
+Hash: 3335
+Hash: 3342
+Hash: 3360
+Hash: 4381
+Hash: 4395
+#+END_SRC 
+:END:
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646746?start=44][Course Link: Unexpected Loop Events Explain FS Delay]]
+
+Basically, FS and pbkdf2 make use of the ThreadPool.  Http uses the OS System Helper.
+
+/Insert Image: FsHashBehavior/
+
+To further illustrate, here is the output with a ThreadPool size of 1.
+
+:ThreadPoolOne:
+#+BEGIN_SRC sh
+node multitask.js
+Request: 312
+Hash: 1090
+Hash: 2139
+Hash: 3173
+Hash: 4207
+Hash: 5263
+Hash: 6314
+Hash: 7376
+Hash: 8408
+FS: 8408
+#+END_SRC
 :END:
 * Part Two: Enhancing Node Performance  
-The agenda talks about performance, children, clustering, and workers. 
+The agenda talks about performance, children, clustering, and workers.  Will these lectures build on an understanding of the Event Loop and Thread Pool?
 * Upcoming Lecture
-?
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646738?start=0][Part One: Lesson 19 Crazy node behaviors]]
