@@ -5,17 +5,9 @@
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Advanced Node Course Summary
-** Time
-:LOGBOOK:
-CLOCK: [2018-05-17 Thu 16:12]--[2018-05-17 Thu 17:13] =>  1:01
-CLOCK: [2018-05-17 Thu 08:57]--[2018-05-17 Thu 09:22] =>  0:25
-CLOCK: [2018-05-16 Wed 18:10]--[2018-05-16 Wed 18:36] =>  0:26
-CLOCK: [2018-05-16 Wed 15:55]--[2018-05-16 Wed 16:20] =>  0:25
-CLOCK: [2018-05-16 Wed 14:20]--[2018-05-16 Wed 14:45] =>  0:25
-CLOCK: [2018-05-16 Wed 13:50]--[2018-05-16 Wed 14:15] =>  0:25
-:END:
 ** Tasks
-*** CURRENT Part One: The Internals of Node 
+*** DONE Part One: The Internals of Node 
+CLOSED: [2018-05-22 Tue 11:20]
 **** DONE Configure local project for examples with eslint and babel properly
 CLOSED: [2018-05-21 Mon 12:05]
 **** DONE Connect Visual Studio Code with eslint
@@ -24,10 +16,8 @@ CLOSED: [2018-05-21 Mon 12:07]
 CLOSED: [2018-05-21 Mon 12:05]
 **** DONE Advance Node Course: Part one screenshots
 CLOSED: [2018-05-21 Mon 12:32]
-**** TODO Insert remaining Part One screenshots
-*** Part Two: Enhancing Node Performance 
-   - 14 Lectures 
-   - 01:23:59 time
+*** CURRENT Part Two: Enhancing Node Performance 
+*STARTED:* <2018-05-22 Tue 11:22> 
 *** Part Three: Project Setup 
    - 5 Lectures 
    - 00:24:45 time
@@ -44,11 +34,10 @@ CLOSED: [2018-05-21 Mon 12:32]
    - 30 Lectures 
    - 02:20:33 time
 *** Connect Spacemacs flycheck with local eslint directory 
-*** SOMEDAY Write It Up
-**** Craft into blog post
-
-**** TODO Resize all images
+*** TODO Write It Up
+**** TODO Resize and insert screen-shots
 **** TODO Outside of course: Set up orgmode calendar
+**** SOMEDAY Craft into blog post
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
 *First Takeaways*
@@ -296,6 +285,21 @@ node async.js
 [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646730?start=100][Course Link: What happens when running ascync.js example 5x]]
 *Summary*
 NodeJS delegates ascync operations to the OSAscyncHelpers. *Again*, everything happens in the ThreadPool 
+*** Async FAQ & Review 
+
+| Question               | Answer                           |
+|------------------------+----------------------------------|
+| What functions in node | Almost everything around         |
+| std library use OS's   | networking for all OS's.         |
+| async features?        | Some other stuff is OS specific. |
+|                        |                                  |
+| How does this OS       | Task using the underlying OS     |
+| async stuff fit in     | are reflected in our             |
+| Event Loop?            | 'pendingOSTasks' array.          |
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646734?start=110][Course Link: A summary diagram]]
+:ImageSummaryDiagram:
+/insert screenshot of summary
+:END:
 
 * Upcoming Lecture
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646732?start=0][NEXT]]
