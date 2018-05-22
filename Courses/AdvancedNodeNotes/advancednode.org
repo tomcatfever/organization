@@ -5,7 +5,6 @@
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Advanced Node Course
-* Tasks
 ** DONE Part One: The Internals of Node 
 CLOSED: [2018-05-22 Tue 11:20]
 *** DONE Configure local project for examples with eslint and babel properly
@@ -19,8 +18,6 @@ CLOSED: [2018-05-21 Mon 12:32]
 ** CURRENT Part Two: Enhancing Node Performance 
 *** Overview
 The agenda talks about performance, children, clustering, and workers.  Will these lectures build on an understanding of the Event Loop and Thread Pool?
-*** DONE Add to outline and summarize lectures. 
-CLOSED: [2018-05-22 Tue 11:30]
 ** Part Three: Project Setup 
 *** Overview 
 Setting up a MongoDB project
@@ -41,7 +38,8 @@ The example project introduces continuous integration concepts, YAML files, and 
 *** Overview 
 The final section covers image handling, converting large image files for AWS, and wiring up AWS Flow.
 ** TODO Clean Up
-*** TODO Outline all the parts
+*** DONE Outline all the parts
+CLOSED: [2018-05-22 Tue 13:33]
 *** TODO Resize and insert screen-shots
 *** TODO Connect Spacemacs flycheck with local eslint directory 
 *** TODO Outside of course: Set up orgmode calendar
@@ -417,6 +415,49 @@ FS: 8408
 #+END_SRC
 :END:
 * Part Two: Enhancing Node Performance  
+** Overview
 The agenda talks about performance, children, clustering, and workers.  Will these lectures build on an understanding of the Event Loop and Thread Pool?
+/Insert Image: ClusterVsWorkModes/
+~Cluster Mode~ is *Recommended*
+~Worker Threads~ are *Experimental*
+
+*Express Example*
+This section uses a sample express app with an entry point of index.js.
+Nodemon isn't used.  It does not work well with clustering.
+
+:IndexjsStarter:
+#+BEGIN_SRC js
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hi there');
+});
+
+app.listen(3000);
+#+END_SRC
+:END:
+** Cluster Mode
+*** Single Thread Problems
+/Req/ *===>* /NODE SERVER/ *===>* /Res/
+This usually works well.  But what if something takes up all the resources?
+This while loop is added to the express app to demonstrate:
+:doWorkfunction:
+#+BEGIN_SRC js
+function doWork(duration) {
+  const start = Date.now();
+  while (Date.now() - start < duration) {
+
+  }
+}
+#+END_SRC
+:END:
+
+Now the app takes five seconds to render.
+*** Clustering Theory
+/Insert Image: Clustering Diagram/
+** Worker Threads
 * Upcoming Lecture
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646738?start=0][Part One: Lesson 19 Crazy node behaviors]]
+What is the next lecture?
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646756?start=0][Clustering Theory]]
