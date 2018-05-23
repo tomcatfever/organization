@@ -40,14 +40,36 @@ CLOSED: [2018-05-22 Tue 19:46]
 * Part One: An Introduction to Vue
 ** CodePen Example
 [[https://codepen.io/sgrider/pen/mLwzjK][This is a link to Stephen's codepen example.]]
-** Vue Templates & Instances
+** Vue Templates & Instances 
 :LOGBOOK:
+CLOCK: [2018-05-23 Wed 09:18]--[2018-05-23 Wed 09:40] =>  0:22
 CLOCK: [2018-05-23 Wed 08:15]--[2018-05-23 Wed 09:05] =>  0:50
 :END:
 In Vue, Templates and Instances are one way of structuring an app.
 + *Vue Templates* are /created in HTML/ and /describes the structure and content of the app/.  
-  + /It is possible to make Vue Templates in JavaScript as well./
+  + /It is possible to make Vue TemplatTes in JavaScript as well./
 + *Vue Instances* are /created in JavaScript/ and /describes what happens when a user interacts with the app/.
-* Next Lesson
-[[https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219474?start=0][Vue Identicon Setup]]
 
+A Vue Instance can access a Template using built-in document object model query selector methods.
+
+#+BEGIN_SRC js
+// Selects the element with a id of app
+new Vue({
+  el: '#app'
+});
+#+END_SRC
+
+:VueDomQuerySelector:
+This slide provide a visualization.
+[[./img/VueDomQuerySelector.png][Image:VueDomQuerySelector]]
+:END:
+
+To better illustrate these principals, we will build an app.
+
+:IdenticonAppWireframe:
+This image shows the app behaviors that need implemented.
+[[./img/IdenticonAppWireframe.png]]
+:END:
+
+* Up Next
+[[https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219482?start=0][Building Identicon App]]
