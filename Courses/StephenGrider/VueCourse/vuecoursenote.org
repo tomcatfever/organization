@@ -5,32 +5,39 @@
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Vue Essentials Course
+137 lectures 10 hrs 22 mins (622 minutes)
 ** Sections
 *** CURRENT Part One: An Introduction to Vue
 A Vue starter project, terminology introduction, Imperative vs Declarative programming, and a Exercise with solutions.
-/59 minutes 24 lectures/
+/93 minutes 24 lectures/
+**** Started <2018-05-22 Tue 19:46>  
 *** Part Two: Moving on with Vue CLI
 Introduction to Vue CLI
-/30 minutes 8 lectures/
+/32 minutes 8 lectures/
 *** Part Three: Writing Effective Vue Apps
 More detailed Vue with a Youtube-like app with a focus on component driven development
-/? minutes 47 lectures/
+/180 minutes 47 lectures/
 *** Part Four: Handling State with Vuex
 What is stays in the title plus using semantic ui
-/? minutes 8 lectures/
+/32 minutes 8 lectures/
 *** Part Five: Authentication in Vue with OAuth2
 Handling authentication states
-/? minutes 17 lectures/
+/80 minutes 17 lectures/
 *** Part Six: Navigation with Vue Router
 Connecting Vue router to the app.
-/? minutes 16 lectures/
+/78 minutes 16 lectures/
 *** Part Seven: Design of Vuex Modules
 Working with Vue models
-/? minutes 10 lectures/
+/47 minutes 10 lectures/
 *** Part Eight: Handling Image Upload
 Image uploading and CSS Grid
-/? minutes 12 lectures/
+/50 minutes 12 lectures/
 ** Things to do
-*** TODO Summarize each section
-*** TODO Calculate section length in minutes
+*** DONE Summarize each section
+CLOSED: [2018-05-22 Tue 19:46]
+*** DONE Calculate section length in minutes
+CLOSED: [2018-05-22 Tue 19:46]
 * Part One: An Introduction to Vue
+* Next Lesson
+[[https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219458?start=0][Lesson 2: First Vue App]]
+
