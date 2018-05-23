@@ -1,9 +1,16 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+</head>
 <!-- Identicon Vue Template -->
 <div id='app'>
     <h3>My Identicon Generator</h3>
     <div>
         Input:
-        <input />
+        <input v-on:input="onInput"/>
     </div>
     <div>Output:</div>
 </div>
+<script src="./main.js"></script>

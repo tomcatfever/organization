@@ -1,5 +1,5 @@
 #+TITLE: Stephen Grider's Vue Essentials Notes
-#+AUTHOR: @tomcatfever
+#+AUTHOR: Tom Adams @tomcatfever
 #+CATEGORY: Courses 
 #+STARTUP: content
 #+STARTUP: indent 
@@ -42,6 +42,7 @@ CLOSED: [2018-05-22 Tue 19:46]
 [[https://codepen.io/sgrider/pen/mLwzjK][This is a link to Stephen's codepen example.]]
 ** Vue Templates & Instances 
 :LOGBOOK:
+CLOCK: [2018-05-23 Wed 10:43]
 CLOCK: [2018-05-23 Wed 09:18]--[2018-05-23 Wed 09:40] =>  0:22
 CLOCK: [2018-05-23 Wed 08:15]--[2018-05-23 Wed 09:05] =>  0:50
 :END:
@@ -71,5 +72,37 @@ This image shows the app behaviors that need implemented.
 [[./img/IdenticonAppWireframe.png]]
 :END:
 
+*** Identicon Step 1: Detect entered text
++ Add a 'method' to view instance
+  + A 'method' is a function tied to Vue instance that responds to user events
++ Call it any time user enters text
+
+:CodeExampleConsoleLog:
+#+BEGIN_SRC js
+// Identicon Vue Instance
+new Vue({
+  el: '#app',
+  methods: {
+    onInput: function() {
+      console.log('Someone typed something.'); // Must directly connect method to Template.
+    }
+  }
+});
+#+END_SRC
+#+BEGIN_SRC html
+<!-- Identicon Vue Template -->
+<div id='app'>
+    <h3>My Identicon Generator</h3>
+    <div>
+        Input:
+        <input v-on:input="onInput"/> <!-- Connects Instance method to the Template. -->
+    </div>
+    <div>Output:</div>
+</div>
+#+END_SRC
+:END:
+*** Identicon Step 2: Get entered text
+*** Identicon Step 3: Text generates Identicon
+*** Identicon Step 4: Show Identicon in 'output'
 * Up Next
-[[https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219482?start=0][Building Identicon App]]
+https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219484?start=0
