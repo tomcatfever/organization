@@ -1,7 +1,7 @@
 #+TITLE: Stephen Grider's Vue Essentials Notes
 #+AUTHOR: Tom Adams @tomcatfever
 #+CATEGORY: Courses 
-#+STARTUP: content
+#+STARTUP: overview
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Vue Essentials Course
@@ -42,7 +42,6 @@ CLOSED: [2018-05-22 Tue 19:46]
 [[https://codepen.io/sgrider/pen/mLwzjK][This is a link to Stephen's codepen example.]]
 ** Vue Templates & Instances 
 :LOGBOOK:
-CLOCK: [2018-05-23 Wed 10:43]
 CLOCK: [2018-05-23 Wed 09:18]--[2018-05-23 Wed 09:40] =>  0:22
 CLOCK: [2018-05-23 Wed 08:15]--[2018-05-23 Wed 09:05] =>  0:50
 :END:
@@ -71,8 +70,15 @@ To better illustrate these principals, we will build an app.
 This image shows the app behaviors that need implemented.
 [[./img/IdenticonAppWireframe.png]]
 :END:
+** Templates & Instances Code Example
+*** DONE Identicon Step 1: Detect entered text
+CLOSED: [2018-05-23 Wed 12:28]
+:LOGBOOK:
+CLOCK: [2018-05-23 Wed 12:15]--[2018-05-23 Wed 12:28] =>  0:13
+CLOCK: [2018-05-23 Wed 10:43]--[2018-05-23 Wed 11:40] =>  0:57
+:END:
 
-*** Identicon Step 1: Detect entered text
+_Step One Will_
 + Add a 'method' to view instance
   + A 'method' is a function tied to Vue instance that responds to user events
 + Call it any time user enters text
@@ -95,14 +101,26 @@ new Vue({
     <h3>My Identicon Generator</h3>
     <div>
         Input:
-        <input v-on:input="onInput"/> <!-- Connects Instance method to the Template. -->
+        <input v-on:input="onInput"/> <!-- Define 'directive' to onInput method. -->
     </div>
     <div>Output:</div>
 </div>
 #+END_SRC
 :END:
-*** Identicon Step 2: Get entered text
-*** Identicon Step 3: Text generates Identicon
-*** Identicon Step 4: Show Identicon in 'output'
+
+_What is a directive?_
+A directive is Template syntax that initiates a piece of code.  When Vue looks at HTML, it searches for keywords which define a 'directive'. In the example above, ~v-on~ is a directive for an event handler, ~input~ event, and ~onInput~ is the called method.
+
+_Identicon Step 1: Summary_
+In this section, a view ~directive~ is used to connect a ~method~ on an ~input event~.
+*** CURRENT Identicon Step 2: Get entered text
+:LOGBOOK:
+CLOCK: [2018-05-23 Wed 12:30]--[2018-05-23 Wed 12:37] =>  0:07
+:END:
+
+_Step Two Will_
++
+*** TODO Identicon Step 3: Text generates Identicon
+*** TODO Identicon Step 4: Show Identicon in 'output'
 * Up Next
-https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219484?start=0
+https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10229718?start=0
