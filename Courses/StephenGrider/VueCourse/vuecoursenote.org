@@ -42,11 +42,12 @@ CLOSED: [2018-05-22 Tue 19:46]
 [[https://codepen.io/sgrider/pen/mLwzjK][This is a link to Stephen's codepen example.]]
 ** Vue Templates & Instances
 :LOGBOOK:
-CLOCK: [2018-05-23 Wed 08:15]
+CLOCK: [2018-05-23 Wed 08:15]--[2018-05-23 Wed 09:05] =>  0:50
 :END:
 In Vue, Templates and Instances are one way of structuring an app.
 + *Vue Templates* are /created in HTML/ and /describes the structure and content of the app/.  
   + /It is possible to make Vue Templates in JavaScript as well./
 + *Vue Instances* are /created in JavaScript/ and /describes what happens when a user interacts with the app/.
 * Next Lesson
+[[https://www.udemy.com/vue-js-course/learn/v4/t/lecture/10219474?start=0][Vue Identicon Setup]]
 
