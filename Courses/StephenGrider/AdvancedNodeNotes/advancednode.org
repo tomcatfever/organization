@@ -443,6 +443,7 @@ app.listen(3000);
 /Req/ *===>* /NODE SERVER/ *===>* /Res/
 This usually works well.  But what if something takes up all the resources?
 This while loop is added to the express app to demonstrate:
+
 :doWorkfunction:
 #+BEGIN_SRC js
 function doWork(duration) {
@@ -456,8 +457,57 @@ function doWork(duration) {
 
 Now the app takes five seconds to render.
 *** Clustering Theory
+:LOGBOOK:
+CLOCK: [2018-05-24 Thu 15:59]--[2018-05-24 Thu 16:12] =>  0:13
+CLOCK: [2018-05-24 Thu 15:44]--[2018-05-24 Thu 15:50] =>  0:06
+:END:
+
 /Insert Image: Clustering Diagram/
+
+Each tread is running a node server instance on one computer.  It is up to these instances to process request, access the database, authenticate, or whatever else a node server does.
+
+The cluster manager can start or stop instances, send them data, and other administrative tasks.
+
+/Insert Image: NodeUsingClustering/
+
+The cluster manager runs like any other NodeJS function (pbkdf2, crypto, etc).
+
+When you run cluster.fork(), Node initiates another 'Worker Instance'.
+
+*** Add clustering to Express App example 
+:LOGBOOK:
+CLOCK: [2018-05-24 Thu 16:12]--[2018-05-24 Thu 16:27] =>  0:15
+:END:
+
+This section starts by adding cluster to the app and a test console log which returns ~true~.  The cluster manager is set to true, for all the worker instances the ~isMaster~ flag is ~false~.
+
+#+NAME: Console logging isManager.
+#+BEGIN_SRC js
+const cluster = require('cluster');
+
+console.log(cluster.isMaster);
+#+END_SRC
+
+#+NAME: Updating code example with cluster using isMaster and ~if...else~ conditional.
+#+BEGIN_SRC js
+const cluster = require('cluster');
+
+if(cluster.isManager) {
+  cluster.fork();
+} else {
+  const express = require('express');
+
+  const app = express();
+
+  app.get('/', (req, res) => {
+    res.send('Hi there');
+  });
+
+  app.listen(3000);
+}
+#+END_SRC
+
 ** Worker Threads
 * Up Next
 What is the next lecture?
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646756?start=0][Clustering Theory]]
+https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646760?start=0
