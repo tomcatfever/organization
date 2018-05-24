@@ -1,7 +1,7 @@
 #+TITLE: Stephen Grider Advanced Node Course Notes
 #+AUTHOR: @tomcatfever
 #+CATEGORY: Courses 
-#+STARTUP: content
+#+STARTUP: overview
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Advanced Node Course
@@ -458,6 +458,6 @@ Now the app takes five seconds to render.
 *** Clustering Theory
 /Insert Image: Clustering Diagram/
 ** Worker Threads
-* Upcoming Lecture
+* Up Next
 What is the next lecture?
 [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646756?start=0][Clustering Theory]]
