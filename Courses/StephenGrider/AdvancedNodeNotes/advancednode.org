@@ -536,14 +536,88 @@ if(cluster.isManager) {
 
 *** Clustering: Benchmark Servers
 :LOGBOOK:
-CLOCK: [2018-05-24 Thu 20:25]
+CLOCK: [2018-05-25 Fri 12:21]--[2018-05-25 Fri 13:01] =>  0:40
+CLOCK: [2018-05-25 Fri 12:12]--[2018-05-25 Fri 12:20] =>  0:08
+CLOCK: [2018-05-24 Thu 20:25]--[2018-05-24 Thu 20:42] =>  0:17
 :END:
+
 Use Apache Benchmark to benchmark requests
 #+NAME: Example Of Apache Bench On OSX
 #+BEGIN_SRC sh
 ab -c 10 -n 50 http://localhost:3000/
 #+END_SRC
 
+#+NAME: Benchmark Refactor
+#+BEGIN_SRC js
+// Set one thread
+process.env.UV_THREADPOOL_SIZE = 1;
+const cluster = require('cluster');
+
+if(cluster.isManager) {
+  // Set one child cluster
+  cluster.fork();
+} else {
+  const express = require('express');
+  const crypto = require('crypto');
+  const app = express();
+
+  app.get('/', (req, res) => {
+    // use pbkdf2 to benchmark request
+    crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+      res.send('Hi there');
+    });
+  });
+
+  app.get('/fast', (req, res) => {
+    res.send('This was fast!');
+  });
+
+  app.listen(3000);
+}
+#+END_SRC
+
+#+NAME+: Run Benchmark Test with Apache Bench in cli
+#+BEGIN_SRC sh
+  ab -c 2 -n 2 localhost:3000/
+#+END_SRC
+Each fork executes in TWO seconds.
+
+#+NAME: Code to demo parrelle processing with clusters
+#+BEGIN_SRC js
+// make sure the thread count is correct
+process.env.UV_THREADPOOL_SIZE = 4;
+const cluster = require('cluster');
+
+if(cluster.isManager) {
+  cluster.fork();
+  cluster.fork();
+} else {
+  const express = require('express');
+  const crypto = require('crypto');
+  const app = express();
+
+  app.get('/', (req, res) => {
+    crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+      res.send('Hi there');
+    });
+  });
+
+  app.get('/fast', (req, res) => {
+    res.send('This was fast!');
+  });
+
+  app.listen(3000);
+}
+#+END_SRC
+Each fork executes in ONE second.
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646768?start=201][Course Link: Understanding Benchmark Test]]
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646768?start=540][Course Link: Benchmark issues with running many (6+) clusters]]
+Continue watching from here for [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646768?start=750][the resolution]] at around t12:30.
+
+Basically try to match the number of CPU cores to the number of total running children.
+
+*** Clustering with PM2 Project
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646770?start=0][Start of next project.]]
 ** Worker Threads
-* Up Next
-What is the next lecture?
