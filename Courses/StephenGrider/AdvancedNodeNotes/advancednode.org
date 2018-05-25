@@ -476,6 +476,7 @@ When you run cluster.fork(), Node initiates another 'Worker Instance'.
 
 *** Add clustering to Express App example 
 :LOGBOOK:
+CLOCK: [2018-05-24 Thu 19:50]--[2018-05-24 Thu 20:31] =>  0:41
 CLOCK: [2018-05-24 Thu 16:12]--[2018-05-24 Thu 16:27] =>  0:15
 :END:
 
@@ -496,10 +497,17 @@ if(cluster.isManager) {
   cluster.fork();
 } else {
   const express = require('express');
-
   const app = express();
 
+  function doWork(duration) {
+    const start = Date.now();
+    while(Date.now() - start < duration) {
+      
+    }
+  }
+
   app.get('/', (req, res) => {
+    doWork(5000);
     res.send('Hi there');
   });
 
@@ -507,7 +515,35 @@ if(cluster.isManager) {
 }
 #+END_SRC
 
+#+NAME: Using clustering to make a faster loading route.
+#+BEGIN_SRC js
+  // First add four calls to fork. This allows requests to `/fast`
+  // to resolve indepentant of the /home on isManager.
+  ...
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
+  ...
+
+  // Now set a new route to /fast which will omit the
+  // doWork function. doWork is only initiated if isManager
+  // test resolves `bool=true`.
+  app.get('/fast', (req, res) => {
+    res.send('This was fast!');
+  });
+#+END_SRC
+
+*** Clustering: Benchmark Servers
+:LOGBOOK:
+CLOCK: [2018-05-24 Thu 20:25]
+:END:
+Use Apache Benchmark to benchmark requests
+#+NAME: Example Of Apache Bench On OSX
+#+BEGIN_SRC sh
+ab -c 10 -n 50 http://localhost:3000/
+#+END_SRC
+
 ** Worker Threads
 * Up Next
 What is the next lecture?
-https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646760?start=0
