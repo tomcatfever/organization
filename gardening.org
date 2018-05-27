@@ -1,6 +1,23 @@
 #+STARTUP: indent
 #+STARTUP: content
 * Gardening
+** Permaculture
+Also known as food forestry
+Here is a good thumbnail explanation: [[https://modernfarmer.com/2017/02/plant-food-forest-winter/]]
+*** Ohio Links
+**** https://www.ec-ohio.com/permaculture/ (directory)
+Link List:
+http://cincypcguild.blogspot.com/
+http://www.greatlakespermaculture.com/
+http://www.permacultureguru.com/
+https://omvalleypermaculture.com/
+http://www.thegreentriangle.com/ (broken)
+http://www.redbeetrow.com/
+http://www.sacredearthfarms.com/ (broken)
+http://www.this-land.org/ (broken)
+https://treeyopermaculture.com/
+**** https://midwestpermaculture.com/
+**** https://www.facebook.com/Ohio-Permaculture-206781619338195/
 * Things to know
 ** Location
 *** Hardiness zones
