@@ -40,6 +40,7 @@ The final section covers image handling, converting large image files for AWS, a
 ** TODO Clean Up
 *** DONE Outline all the parts
 CLOSED: [2018-05-22 Tue 13:33]
+*** TODO Review PM2 Documentation
 *** TODO Resize and insert screen-shots
 *** TODO Connect Spacemacs flycheck with local eslint directory 
 *** TODO Outside of course: Set up orgmode calendar
