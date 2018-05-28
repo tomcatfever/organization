@@ -1,0 +1,5 @@
+#+TITLE: SalesForce Admin Training
+#+STARTUP: indent
+#+STARTUP: overview
+* Learn to administer and develop SalesForce
+* [[https://trailhead.salesforce.com/en/home][SalesForce TrailHead - Free online training]]
