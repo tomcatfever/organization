@@ -1,7 +1,7 @@
 #+TITLE: Stephen Grider Advanced Node Course Notes
 #+AUTHOR: @tomcatfever
 #+CATEGORY: Courses 
-#+STARTUP: content
+#+STARTUP: overview
 #+STARTUP: indent 
 #+SEQ_TODO: TODO CURRENT SOMEDAY | DONE CANCEL
 * Advanced Node Course
@@ -40,6 +40,7 @@ The final section covers image handling, converting large image files for AWS, a
 ** TODO Clean Up
 *** DONE Outline all the parts
 CLOSED: [2018-05-22 Tue 13:33]
+*** TODO Review PM2 Documentation
 *** TODO Resize and insert screen-shots
 *** TODO Connect Spacemacs flycheck with local eslint directory 
 *** TODO Outside of course: Set up orgmode calendar
@@ -443,6 +444,7 @@ app.listen(3000);
 /Req/ *===>* /NODE SERVER/ *===>* /Res/
 This usually works well.  But what if something takes up all the resources?
 This while loop is added to the express app to demonstrate:
+
 :doWorkfunction:
 #+BEGIN_SRC js
 function doWork(duration) {
@@ -456,8 +458,167 @@ function doWork(duration) {
 
 Now the app takes five seconds to render.
 *** Clustering Theory
+:LOGBOOK:
+CLOCK: [2018-05-24 Thu 15:59]--[2018-05-24 Thu 16:12] =>  0:13
+CLOCK: [2018-05-24 Thu 15:44]--[2018-05-24 Thu 15:50] =>  0:06
+:END:
+
 /Insert Image: Clustering Diagram/
+
+Each tread is running a node server instance on one computer.  It is up to these instances to process request, access the database, authenticate, or whatever else a node server does.
+
+The cluster manager can start or stop instances, send them data, and other administrative tasks.
+
+/Insert Image: NodeUsingClustering/
+
+The cluster manager runs like any other NodeJS function (pbkdf2, crypto, etc).
+
+When you run cluster.fork(), Node initiates another 'Worker Instance'.
+
+*** Add clustering to Express App example 
+:LOGBOOK:
+CLOCK: [2018-05-24 Thu 19:50]--[2018-05-24 Thu 20:31] =>  0:41
+CLOCK: [2018-05-24 Thu 16:12]--[2018-05-24 Thu 16:27] =>  0:15
+:END:
+
+This section starts by adding cluster to the app and a test console log which returns ~true~.  The cluster manager is set to true, for all the worker instances the ~isMaster~ flag is ~false~.
+
+#+NAME: Console logging isManager.
+#+BEGIN_SRC js
+const cluster = require('cluster');
+
+console.log(cluster.isMaster);
+#+END_SRC
+
+#+NAME: Updating code example with cluster using isMaster and ~if...else~ conditional.
+#+BEGIN_SRC js
+const cluster = require('cluster');
+
+if(cluster.isManager) {
+  cluster.fork();
+} else {
+  const express = require('express');
+  const app = express();
+
+  function doWork(duration) {
+    const start = Date.now();
+    while(Date.now() - start < duration) {
+      
+    }
+  }
+
+  app.get('/', (req, res) => {
+    doWork(5000);
+    res.send('Hi there');
+  });
+
+  app.listen(3000);
+}
+#+END_SRC
+
+#+NAME: Using clustering to make a faster loading route.
+#+BEGIN_SRC js
+  // First add four calls to fork. This allows requests to `/fast`
+  // to resolve indepentant of the /home on isManager.
+  ...
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
+  ...
+
+  // Now set a new route to /fast which will omit the
+  // doWork function. doWork is only initiated if isManager
+  // test resolves `bool=true`.
+  app.get('/fast', (req, res) => {
+    res.send('This was fast!');
+  });
+#+END_SRC
+
+*** Clustering: Benchmark Servers
+:LOGBOOK:
+CLOCK: [2018-05-25 Fri 12:21]--[2018-05-25 Fri 13:01] =>  0:40
+CLOCK: [2018-05-25 Fri 12:12]--[2018-05-25 Fri 12:20] =>  0:08
+CLOCK: [2018-05-24 Thu 20:25]--[2018-05-24 Thu 20:42] =>  0:17
+:END:
+
+Use Apache Benchmark to benchmark requests
+#+NAME: Example Of Apache Bench On OSX
+#+BEGIN_SRC sh
+ab -c 10 -n 50 http://localhost:3000/
+#+END_SRC
+
+#+NAME: Benchmark Refactor
+#+BEGIN_SRC js
+// Set one thread
+process.env.UV_THREADPOOL_SIZE = 1;
+const cluster = require('cluster');
+
+if(cluster.isManager) {
+  // Set one child cluster
+  cluster.fork();
+} else {
+  const express = require('express');
+  const crypto = require('crypto');
+  const app = express();
+
+  app.get('/', (req, res) => {
+    // use pbkdf2 to benchmark request
+    crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+      res.send('Hi there');
+    });
+  });
+
+  app.get('/fast', (req, res) => {
+    res.send('This was fast!');
+  });
+
+  app.listen(3000);
+}
+#+END_SRC
+
+#+NAME+: Run Benchmark Test with Apache Bench in cli
+#+BEGIN_SRC sh
+  ab -c 2 -n 2 localhost:3000/
+#+END_SRC
+Each fork executes in TWO seconds.
+
+#+NAME: Code to demo parrelle processing with clusters
+#+BEGIN_SRC js
+// make sure the thread count is correct
+process.env.UV_THREADPOOL_SIZE = 4;
+const cluster = require('cluster');
+
+if(cluster.isManager) {
+  cluster.fork();
+  cluster.fork();
+} else {
+  const express = require('express');
+  const crypto = require('crypto');
+  const app = express();
+
+  app.get('/', (req, res) => {
+    crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+      res.send('Hi there');
+    });
+  });
+
+  app.get('/fast', (req, res) => {
+    res.send('This was fast!');
+  });
+
+  app.listen(3000);
+}
+#+END_SRC
+Each fork executes in ONE second.
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646768?start=201][Course Link: Understanding Benchmark Test]]
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646768?start=540][Course Link: Benchmark issues with running many (6+) clusters]]
+Continue watching from here for [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646768?start=750][the resolution]] at around t12:30.
+
+Basically try to match the number of CPU cores to the number of total running children.
+
+*** Clustering with PM2 Project
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646770?start=0][Start of next project.]]
 ** Worker Threads
-* Upcoming Lecture
-What is the next lecture?
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646756?start=0][Clustering Theory]]

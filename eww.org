@@ -1,0 +1,7 @@
+* TODO Add Eww To Spacemacs
+Article about configuration
+http://pragmaticemacs.com/emacs/to-eww-or-not-to-eww/
+
+Sample configuration:
+https://github.com/dakrone/eos/blob/master/eos-web.org
+
