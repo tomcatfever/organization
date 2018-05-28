@@ -9,12 +9,12 @@
 * [[https://orgmode.org/manual/][eBook: OrgMode Manual- Carsten Dominik]]
 ** /Review/
 Documentation written by the creator of OrgMode Carsten Dominik. Well written,
-each 'major mode' function is described along with potential OrgMode front
+the guide describes 'major mode' functions along with potential OrgMode front
 matter options for global and document based configurations.
 ** /Take-away Thoughts/ 
 + It seems best to use front matter files for customization and configurations.
 + OrgMode is a good way to track time and effort in a specific project.
-+ Spacemacs has some key binding differences, however some are the same.
++ Spacemacs has some key binding differences.
   + Examples:
   /S+right-arrow/ toggles TODO state
   /TAB/ & /S+TAB/ expand & collapse subtree
