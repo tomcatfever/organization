@@ -620,5 +620,29 @@ Continue watching from here for [[https://www.udemy.com/advanced-node-for-develo
 Basically try to match the number of CPU cores to the number of total running children.
 
 *** Clustering with PM2 Project
-[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646770?start=0][Start of next project.]]
+:LOGBOOK:
+CLOCK: [2018-05-27 Sun 13:35]--[2018-05-27 Sun 13:49] =>  0:14
+:END:
+PM2 - The Parallel Multithreaded Machine is a software for parallel networking of computers. 
+Usually PM2 is run in remote production environments.
+#+NAME: PM2 Bash Commands
+#+BEGIN_SRC sh
+# Start PM2, automatically generate instances
+pm2 start index.js -i 0
+
+# Kill all instances named index
+pm2 delete index
+
+# Display detailed process description
+pm2 show index to 
+# Display logs
+pm2 logs index [--lines 1000] 
+
+# Monitor CPU and Memory usage index
+pm2 monit 
+#+END_SRC
 ** Worker Threads
+*** Webwork Threads
+This isn't an amazing approach. It still depends on the number of CPU cores and the overall amount of processing power the machine running an application has.
+
+The example will use an npm package called ~webworker-threads~.
