@@ -15,12 +15,14 @@ CLOSED: [2018-05-21 Mon 12:07]
 CLOSED: [2018-05-21 Mon 12:05]
 *** DONE Advance Node Course: Part one screenshots
 CLOSED: [2018-05-21 Mon 12:32]
-** CURRENT Part Two: Enhancing Node Performance 
+** DONE Part Two: Enhancing Node Performance 
+CLOSED: [2018-05-29 Tue 08:13]
 *** Overview
 The agenda talks about performance, children, clustering, and workers.  Will these lectures build on an understanding of the Event Loop and Thread Pool?
-** Part Three: Project Setup 
+** CURRENT Part Three: Project Setup 
 *** Overview 
 Setting up a MongoDB project
+
 ** Part Four: Data Caching with Redis 
 *** Overview
 Continues MongoDB project using Redis, understanding cashes, promises, models
@@ -40,11 +42,14 @@ The final section covers image handling, converting large image files for AWS, a
 ** TODO Clean Up
 *** DONE Outline all the parts
 CLOSED: [2018-05-22 Tue 13:33]
-*** TODO Review PM2 Documentation
+*** DONE Review PM2 Documentation
+CLOSED: [2018-05-29 Tue 08:14]
 *** TODO Resize and insert screen-shots
-*** TODO Connect Spacemacs flycheck with local eslint directory 
+*** DONE Connect Spacemacs flycheck with local eslint directory 
+CLOSED: [2018-05-29 Tue 08:14]
+Resolved using react layer.
 *** TODO Outside of course: Set up orgmode calendar
-*** SOMEDAY Craft into blog post
+*** SOMEDAY Craft this into blog post
 * Part One: The Internals of Node
 ** NodeJS, V8, and libuv
 *First Takeaways*
@@ -646,3 +651,39 @@ pm2 monit
 This isn't an amazing approach. It still depends on the number of CPU cores and the overall amount of processing power the machine running an application has.
 
 The example will use an npm package called ~webworker-threads~.
+*** Web Worker Thread Example
+#+NAME: The example will use the express sample app to illustrate worker threads in action.
+#+BEGIN_SRC js
+// Updates to include worker example
+const app = express();
+const Worker = require('webworker-threads').Worker;
+
+app.get('/', (req, res) => {
+  const worker = new Worker(function () {
+    this.onmessage = function () {
+      let counter = 0;
+      while (counter < 1e9) {
+        counter++;
+      }
+
+      postMessage(counter);
+    };
+  });
+
+  worker.onmessage = function (message) {
+    console.log(message.data)
+    res.send('' + message.data);
+  };
+
+  worker.postMessage();
+});
+
+app.get('/fast', (req, res) => {
+  res.send('This was fast!');
+});
+
+app.listen(3000);
+#+END_SRC
+
+[[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646782?start=290][Course Link: Brief description of closure scope with variable assignment.]]
+* Part Three: Project Setup 
