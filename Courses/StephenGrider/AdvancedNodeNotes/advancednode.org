@@ -687,3 +687,8 @@ app.listen(3000);
 
 [[https://www.udemy.com/advanced-node-for-developers/learn/v4/t/lecture/9646782?start=290][Course Link: Brief description of closure scope with variable assignment.]]
 * Part Three: Project Setup 
+:LOGBOOK:
+CLOCK: [2018-05-29 Tue 12:16]--[2018-05-29 Tue 12:33] =>  0:17
+:END:
+Changed branch to 'plainjane' in project.
+
