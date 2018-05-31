@@ -1,0 +1,13 @@
+#+TITLE: Full Stack React Course
+#+STARTUP: indent
+#+STARTUP: overview
+* Full Stack React Course
+** Part One: Overview
+[[https://docs.google.com/document/d/1ZVLphlOH0PEOUCd5v2UJVHiRSKuYjJI-AS4xQWYXmq8/edit#heading=h.fnjk6vnqzbqk][Course Cheat Sheet]]
+*** Project Overview
+This is one single project with a large number of features.  The first part will build in a survey function that will allow the app owner to:
+1. Ask some number of users to answer questions.
+2. Send an email requesting feedback.
+3. Record their answers.
+4. Get a tabulation of results.
+
