@@ -25,17 +25,15 @@ http://gutenberg.net.au/licence.html
 
 To contact Project Gutenberg of Australia go to http://gutenberg.net.au
 
-GO TO Project Gutenberg Australia HOME PAGE
-
 * Pigeons from Hell
-Robert E. Howard
-First published in Weird Tales, May 1938
+** Written by Robert E. Howard
+** First published in Weird Tales, May 1938
 * TABLE OF CONTENTS
 ** Chapter 1. The Whistler In The Dark
 ** Chapter 2. The Snake's Brother
 ** Chapter 3. The Call Of Zuvembie
-** TODO Insert Cover Image
-Cover Image Weird Tales, May 1938
+* TODO Insert Image: Weird Tales, May 1938
+
 * 1. THE WHISTLER IN THE DARK
 GRISWELL awoke suddenly, every nerve tingling with a premonition of imminent peril. He stared about wildly, unable at first to remember where he was, or what he was doing there. Moonlight filtered in through the dusty windows, and the great empty room with its lofty ceiling and gaping black fireplace was spectral and unfamiliar. Then as he emerged from the clinging cobwebs of his recent sleep, he remembered where he was and how he came to be there. He twisted his head and stared at his companion, sleeping on the floor near him. John Branner was but a vaguely bulking shape in the darkness that the moon scarcely grayed.
 
@@ -51,7 +49,9 @@ The oaken door sagged on broken hinges. Dust lay thick on the floor of the wide,
 
 They discussed gathering wood and building a fire, but decided against it. As the sun sank, darkness came quickly, the thick, black, absolute darkness of the pinelands. They knew that rattlesnakes and copperheads haunted Southern forests, and they did not care to go groping for firewood in the dark. They ate frugally from tins, then rolled in their blankets fully clad before the empty fireplace, and went instantly to sleep.
 
-This, in part, was what Griswell had dreamed. He saw again the gaunt house looming stark against the crimson sunset; saw the flight of the pigeons as he and Branner came up the shattered walk. He saw the dim room in which they presently lay, and he saw the two forms that were himself and his companion, lying wrapped in their blankets on the dusty floor. Then from that point his dream altered subtly, passed out of the realm of the commonplace and became tinged with fear. He was looking into a vague, shadowy chamber, lit by the gray light of the moon which streamed in from some obscure source. For there was no window in that room. But in the gray light he saw three silent shapes that hung suspended in a row, and their stillness and their outlines woke chill horror in his soul. There was no sound, no word, but he sensed a Presence of fear and lunacy crouching in a dark corner... Abruptly he was back in the dusty, high-ceilinged room, before the great fireplace.
+This, in part, was what Griswell had dreamed. He saw again the gaunt house looming stark against the crimson sunset; saw the flight of the pigeons as he and Branner came up the shattered walk. He saw the dim room in which they presently lay, and he saw the two forms that were himself and his companion, lying wrapped in their blankets on the dusty floor. Then from that point his dream altered subtly, passed out of the realm of the commonplace and became tinged with fear.
+
+He was looking into a vague, shadowy chamber, lit by the gray light of the moon which streamed in from some obscure source. For there was no window in that room. But in the gray light he saw three silent shapes that hung suspended in a row, and their stillness and their outlines woke chill horror in his soul. There was no sound, no word, but he sensed a Presence of fear and lunacy crouching in a dark corner... Abruptly he was back in the dusty, high-ceilinged room, before the great fireplace.
 
 He was lying in his blankets, staring tensely through the dim door and across the shadowy hall, to where a beam of moonlight fell across the balustraded stair, some seven steps up from the landing. And there was something on the stair, a bent, misshapen, shadowy thing that never moved fully into the beam of light. But a dim yellow blur that might have been a face was turned toward him, as if something crouched on the stair, regarding him and his companion. Fright crept chilly through his veins, and it was then that he awoke —if indeed he had been asleep.
 
